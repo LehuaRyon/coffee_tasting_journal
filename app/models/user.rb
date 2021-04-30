@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
     # has many entries through coffees
     # has_many :entries, through: coffees
     # user.entries
-
+    # validates_presence_of :username, :email, :password, :first_name, :last_name
+	# validates_uniqueness_of :username, :email
 end
