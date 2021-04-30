@@ -1,6 +1,7 @@
 class CoffeeController < ApplicationController
 # inherit anything thats defined in Application Controller
 
+#==================== SHOW ==============================
     # user requested all coffees
     get '/posts' do
         @coffees = Coffee.all
@@ -10,3 +11,5 @@ class CoffeeController < ApplicationController
         erb :'coffees/index'
     end
 end
+
+#--------------------------------------------------------
