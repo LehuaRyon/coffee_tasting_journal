@@ -22,6 +22,10 @@ MVC = Model, View, Controller (separation of responsibilities)
         - what renders data to user, everything that the user sees
         - text and styling
         - view for every CRUD action
+        - separate views according to model being handled
+        - combination of ERB & HTML
+        - ERB tag: <% %> interpolate ruby code but user not meant to see
+        - ERB tag: <%= %> interpolate ruby code that user can see
     Controller:
         - middle man between model and view
             - view and model should never directly communicate
@@ -29,13 +33,35 @@ MVC = Model, View, Controller (separation of responsibilities)
         - define routes
         - define actions of routes when each route is requested
         - controller for every model so its easier to navigate, debug, organize code
+            - application controller:
+                - define general routes
+                - any route that does not involve a model
+                - ex. root route, contact route, about route
+                - order of routes really matters
+
 Request/Response flows:
     Client = user is the requesting side
     Server = the application responding
         - this app is local server, not public
         - heroku is public domain w/public server
+
 persist = adding data to database
 models = singular
 databases/tables = plural
+
+RESTful Routes (Representational State Transfer):
+    - transferring all data back and forth based on requests beings made
+    - does as a huge string
+    - everything done on internet communicates through strings
+    VERB:       ROUTE:      VIEW:       ACTION:
+    Get         /posts      index       Read
+    Get         /posts/:id  show        Read (dynamic route, :id is placeholder for value)
+    Get         /posts/new  new         Create
+    Post        /posts      No view     Create
+    get         /posts/:id/edit  edit   update (dynamic route, :id replaced by :id of post being edited)
+    put/patch   /posts/:id  No view     update (patch more accurate when changing couple attributes of object and not entire object itself)
+    delete      /posts/:id  No view     delete
+
+
 
 
