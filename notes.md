@@ -21,12 +21,14 @@ MVC = Model, View, Controller (separation of responsibilities)
         - erb = embedded ruby, used to render(display) content to user
         - what renders data to user, everything that the user sees
         - text and styling
+        - view for every CRUD action
     Controller:
         - middle man between model and view
             - view and model should never directly communicate
         - responsible for handling requests & responding to those requests
         - define routes
         - define actions of routes when each route is requested
+        - controller for every model so its easier to navigate, debug, organize code
 Request/Response flows:
     Client = user is the requesting side
     Server = the application responding
