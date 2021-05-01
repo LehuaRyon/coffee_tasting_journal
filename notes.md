@@ -60,6 +60,9 @@ MVC = Model, View, Controller (separation of responsibilities)
         - Create in (CRUD)
             - 1. show user form to fill out using http verb, get
             - 2. submit user's filled out form using http verb, post
+        - Redirect:
+            - making a new request, refreshing page
+            - ex. use erb to display error messages, bc current session of page will stay open
 
 Request/Response flows:
     Client = user is the requesting side
@@ -68,6 +71,10 @@ Request/Response flows:
         - heroku is public domain w/public server
 
 Get Params Data through: 
+    - keep key names aligned with columns in database
+        - two ways to create coffee object:
+            - not needed bc of above: @coffee = Coffee.new(name: params[:name], roaster: params[:roaster], etc.)
+            - simplified & better: @coffee = Coffee.new(params)
     - dynamic routes, URL
         - key will be stored inside of params hash
         - value is whatever was replacing placeholder

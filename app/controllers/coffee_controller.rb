@@ -41,6 +41,14 @@ class CoffeeController < ApplicationController
         # adding new coffee to collection of coffees
         # create new coffee
         # redirect user
+        # @coffee = Coffee.new(name: params[:name], roaster: params[:roaster], etc.)
+        # @coffee = Coffee.new(params)
+        # hasnt been persisted, so no id, need to be persisted
+        # @coffee.save
+        @coffee = Coffee.create(params)
+        # create and persist at the same time, now has id bc its saved in db
+        redirect "/coffees/#{@coffee.id}"
+        # redirect user to coffee's show page using that new coffee's id in place of the show route's placeholder
     end
     
     get '/coffees/:id/edit' do
