@@ -39,6 +39,11 @@ MVC = Model, View, Controller (separation of responsibilities)
                 - any route that does not involve a model
                 - ex. root route, contact route, about route
                 - order of routes really matters
+                - HTTP Verbs:
+                    - get = show user something
+                    - post or patch = receiving data back from user
+                        - post = receiving info about new object, not already existing
+                        - put or patch = receiving edited info about existing object
 
 Request/Response flows:
     Client = user is the requesting side
