@@ -15,12 +15,6 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  # app controller
-    # define general routes
-    # any route that does not involve a model
-    # ex. root route, contact route, about route
-  # order of routes really matters
-
   get "/" do
     # get = http verb
     # root route, www.google.com
