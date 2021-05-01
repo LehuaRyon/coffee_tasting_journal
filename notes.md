@@ -62,10 +62,13 @@ MVC = Model, View, Controller (separation of responsibilities)
             - 1. show user form to fill out using http verb, get
             - 2. submit user's filled out form using http verb, post
         - Update in (CRUD)
-            - <form action="/coffees/<%= @@coffee.id %>" method="post"> 
-            - <input type="hidden" name="_method" value="patch">
-                - can create requests aside from the defaulted post request
-                - replaces method= with value= request
+            - Method override:
+                - config.ru needs added:
+                    - use Rack::MethodOverride
+                - <form action="/coffees/<%= @@coffee.id %>" method="post"> 
+                - <input type="hidden" name="_method" value="patch">
+                    - can create requests aside from the defaulted post request
+                    - replaces method= with value= request
         - Redirect:
             - making a new request, refreshing page
             - ex. use erb to display error messages, bc current session of page will stay open

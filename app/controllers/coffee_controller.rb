@@ -66,6 +66,8 @@ class CoffeeController < ApplicationController
     patch '/coffees/:id' do
         # no view, recieveing data from user not showing data
         # update the object with new attributes
+        @coffee = Coffee.find_by(params[:id])
+        @coffee.update
     end
 
     # user deletes exiting coffee
