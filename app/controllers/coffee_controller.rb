@@ -29,7 +29,7 @@ class CoffeeController < ApplicationController
         # params = {"id"=>"1"}
         # params[:id] => 1
         # dynamically return info on different coffees given id
-        @coffee = Coffee.find_by(params[:id])
+        @coffee = Coffee.find_by(id: params[:id])
         # render the correct erb
         erb :'coffees/show'
     end
@@ -55,7 +55,7 @@ class CoffeeController < ApplicationController
         # retrieve object with givne id
         # autofill a form with the previous info of object
         # render to user can then make changes 
-        @coffee = Coffee.find_by(params[:id])
+        @coffee = Coffee.find_by(id: params[:id])
         # using find_by with activerecord to retrieve object from database
         erb :"/coffees/edit"
         # render edit form
@@ -66,8 +66,12 @@ class CoffeeController < ApplicationController
     patch '/coffees/:id' do
         # no view, recieveing data from user not showing data
         # update the object with new attributes
-        @coffee = Coffee.find_by(params[:id])
-        @coffee.update
+        @coffee = Coffee.find_by(id: params[:id])
+        @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
+        # have to parse through params bc parms by itself gives me _method key with patch value
+        redirect "/coffees/#{@coffee.id}"
+        # redirect to show page to see updated object
+        # dont need .save bc with .update it persists to db already
     end
 
     # user deletes exiting coffee
