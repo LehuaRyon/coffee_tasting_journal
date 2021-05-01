@@ -24,6 +24,7 @@ MVC = Model, View, Controller (separation of responsibilities)
         - view for every CRUD action
         - separate views according to model being handled
         - combination of ERB & HTML
+        - we have return each attribute of an object to show it
         - ERB tag: <% %> interpolate ruby code but user not meant to see
         - ERB tag: <%= %> interpolate ruby code that user can see
     Controller:
@@ -44,6 +45,10 @@ Request/Response flows:
     Server = the application responding
         - this app is local server, not public
         - heroku is public domain w/public server
+
+Retrieve Params Data through:
+    - URL
+    - forms
 
 persist = adding data to database
 models = singular

@@ -1,5 +1,5 @@
-index view
+index page (returning all coffees created)
 
-<%@coffees.each do |c|
-
-end
+<%@coffees.each do |c| %>
+    <p><%= c.name %> - <%= c.id %></p>
+<% end %>
