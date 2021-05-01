@@ -7,13 +7,15 @@ class CoffeeController < ApplicationController
     get '/coffees' do
         @coffees = Coffee.all
         # return all coffees I created 
+        # make call to database and gather all
         # using active record mehthod to reach into table, controller communicating with model, store those values in instance variable
         # instance variable is accessible in view page rendered
+        # render view page
         erb :'coffees/index'
     end
 
     # user requested to view form to add a new coffee
-    get 'coffees/new' do
+    get '/coffees/new' do
 
         erb :'coffees/new'
     end
@@ -62,3 +64,5 @@ class CoffeeController < ApplicationController
 end
 
 #--------------------------------------------------------
+
+

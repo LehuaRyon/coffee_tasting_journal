@@ -27,6 +27,15 @@ MVC = Model, View, Controller (separation of responsibilities)
         - we have return each attribute of an object to show it
         - ERB tag: <% %> interpolate ruby code but user not meant to see
         - ERB tag: <%= %> interpolate ruby code that user can see
+            - layout.erb:
+                - content that renders on every page throughout application
+                    - will yield to views 
+                    - yield, run code till hits yield and run code for next function
+                - a search form, a footer, menu bar, logout button, images
+                - one location means less spelling errors and keeps code dry
+        - forms:
+            - action attribute: tells form where its going to post
+            - method attribute: type of request being made
     Controller:
         - middle man between model and view
             - view and model should never directly communicate
@@ -34,16 +43,20 @@ MVC = Model, View, Controller (separation of responsibilities)
         - define routes
         - define actions of routes when each route is requested
         - controller for every model so its easier to navigate, debug, organize code
+        - controller communicates with view page through instance variables
             - application controller:
                 - define general routes
                 - any route that does not involve a model
                 - ex. root route, contact route, about route
                 - order of routes really matters
-                - HTTP Verbs:
-                    - get = show user something
-                    - post or patch = receiving data back from user
-                        - post = receiving info about new object, not already existing
-                        - put or patch = receiving edited info about existing object
+        - HTTP Verbs:
+            - get = show user something
+            - post or patch = receiving data back from user
+                - post = receiving info about new object, not already existing
+                - put or patch = receiving edited info about existing object
+        - Create in (CRUD)
+            - 1. show user form to fill out using http verb, get
+            - 2. submit user's filled out form using http verb, post
 
 Request/Response flows:
     Client = user is the requesting side
