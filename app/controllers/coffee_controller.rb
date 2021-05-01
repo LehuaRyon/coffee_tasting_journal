@@ -3,6 +3,7 @@ class CoffeeController < ApplicationController
 
 #==================== SHOW ==============================
     # user requested all coffees
+    # index page
     get '/coffees' do
         @coffees = Coffee.all
         # return all coffees I created 
@@ -11,7 +12,13 @@ class CoffeeController < ApplicationController
         erb :'coffees/index'
     end
 
-    # user requested details of 1 post
+    # user requested to view form to add a new coffee
+    get 'coffees/new' do
+
+        erb :'coffees/new'
+    end
+
+    # user requested details of 1 coffee
     # show page
     get '/coffees/:id' do
         # retieve requested post w/params
@@ -21,6 +28,22 @@ class CoffeeController < ApplicationController
         # params[:id] => 1
         # dynamically return info on different coffees given id
         @coffee = Coffee.find(params[:id])
+        # render the correct erb
+        erb :'coffees/show'
+    end
+
+    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes 
+    get '/coffees/:id/edit' do
+        # retrieve object with givne id
+        # autofill a form with the previous info of object
+        # render to user can then make changes 
+
+    end
+
+    # user submitted edit form
+    # post = create new object, put/patch = updating already existing record
+    patch '/coffees/:id' do
+
     end
 end
 
