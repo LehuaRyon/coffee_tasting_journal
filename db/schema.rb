@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_034709) do
+ActiveRecord::Schema.define(version: 2021_05_01_143310) do
+
+  create_table "coffees", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "roaster"
+    t.string "producer"
+    t.string "variety"
+    t.string "process"
+    t.string "notes"
+  end
 
   create_table "entries", force: :cascade do |t|
     t.string "title"
