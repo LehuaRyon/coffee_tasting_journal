@@ -32,17 +32,31 @@ class CoffeeController < ApplicationController
         erb :'coffees/show'
     end
 
-    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes 
+    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes, file in read in order
+
+    # user submitted new coffee form
+    post '/coffees' do
+        # adding new coffee to collection of coffees
+        # create new coffee
+        # redirect user
+    end
+    
     get '/coffees/:id/edit' do
         # retrieve object with givne id
         # autofill a form with the previous info of object
         # render to user can then make changes 
-
     end
 
     # user submitted edit form
     # post = create new object, put/patch = updating already existing record
     patch '/coffees/:id' do
+        # no view, recieveing data from user not showing data
+        # update the object with new attributes
+    end
+
+    # user deletes exiting coffee
+    delete '/coffees/:id' do
+        # no view
 
     end
 end
