@@ -29,14 +29,14 @@ class CoffeeController < ApplicationController
         # params = {"id"=>"1"}
         # params[:id] => 1
         # dynamically return info on different coffees given id
-        @coffee = Coffee.find(params[:id])
+        @coffee = Coffee.find_by(params[:id])
         # render the correct erb
         erb :'coffees/show'
     end
 
     # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes, file in read in order
 
-    # user submitted new coffee form
+    # user submitted new coffee form, and redirected to see coffee just created
     post '/coffees' do
         # adding new coffee to collection of coffees
         # create new coffee

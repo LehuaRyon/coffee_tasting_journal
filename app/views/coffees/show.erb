@@ -1,6 +1,20 @@
-Name: <%= @coffee.name %><br>
-Roaster: <%= @coffee.roaster %><br>
-Producer: <%= @coffee.producer %><br>
-Variety: <%= @coffee.variety %><br>
-Process: <%= @coffee.process %><br>
-Notes: <%= @coffee.notes %><br>
+<h1><%= @coffee.name %></h1>
+
+<h2>Roaster:</h2>
+<p><%= @coffee.roaster %></p>
+
+<h2>Producer:</h2>
+<p><%= @coffee.producer %></p>
+
+<h2>Variety:</h2>
+<p><%= @coffee.variety %></p>
+
+<h2>Process:</h2>
+<p><%= @coffee.process %></p>
+
+<h2>Notes:</h2>
+<p><%= @coffee.notes %></p>
+
+<p><a href="/coffees">See All Coffee Logs</a></p>
+<p><a href="/coffees/<%= @coffee.id %>/edit">Edit This Coffee Log</a></p>
+

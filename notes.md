@@ -27,6 +27,7 @@ MVC = Model, View, Controller (separation of responsibilities)
         - we have return each attribute of an object to show it
         - ERB tag: <% %> interpolate ruby code but user not meant to see
         - ERB tag: <%= %> interpolate ruby code that user can see
+        - <a> tag: use to create links, href tag: where to go when link is clicked
         - id= : designated for css selectors, if using css selectors need to add id attribute to html tags
             - layout.erb:
                 - content that renders on every page throughout application
