@@ -55,6 +55,11 @@ class CoffeeController < ApplicationController
         # retrieve object with givne id
         # autofill a form with the previous info of object
         # render to user can then make changes 
+        @coffee = Coffee.find_by(params[:id])
+        # using find_by with activerecord to retrieve object from database
+        erb :"/coffees/edit"
+        # render edit form
+
     end
 
     # user submitted edit form
