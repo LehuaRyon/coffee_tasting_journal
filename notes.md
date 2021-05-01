@@ -27,6 +27,7 @@ MVC = Model, View, Controller (separation of responsibilities)
         - we have return each attribute of an object to show it
         - ERB tag: <% %> interpolate ruby code but user not meant to see
         - ERB tag: <%= %> interpolate ruby code that user can see
+        - id= : designated for css selectors, if using css selectors need to add id attribute to html tags
             - layout.erb:
                 - content that renders on every page throughout application
                     - will yield to views 
@@ -36,6 +37,8 @@ MVC = Model, View, Controller (separation of responsibilities)
         - forms:
             - action attribute: tells form where its going to post
             - method attribute: type of request being made
+            - name attribute (in input field): determines keys in params hash
+                -  
     Controller:
         - middle man between model and view
             - view and model should never directly communicate
@@ -64,9 +67,16 @@ Request/Response flows:
         - this app is local server, not public
         - heroku is public domain w/public server
 
-Retrieve Params Data through:
-    - URL
+Get Params Data through: 
+    - dynamic routes, URL
+        - key will be stored inside of params hash
+        - value is whatever was replacing placeholder
     - forms
+        - retrieve data from user's submission
+        - hack into params hash, pull out values
+        - to do so we need key value pairing
+            - define keys in input field name= attribute (severs side)
+            - value is what user inputted in their form for that attribute (clients side)
 
 persist = adding data to database
 models = singular

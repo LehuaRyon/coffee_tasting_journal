@@ -50,7 +50,6 @@ class CoffeeController < ApplicationController
     end
 
     # user submitted edit form
-    # post = create new object, put/patch = updating already existing record
     patch '/coffees/:id' do
         # no view, recieveing data from user not showing data
         # update the object with new attributes
