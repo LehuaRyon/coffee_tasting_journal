@@ -12,7 +12,14 @@ class UserController < ApplicationController
     post '/signup' do
         # recieve data from form inside params has
         # create new user object with data
+        user = User.new(params)
         # validate user object
+        if user.username.blank? || user.email.blank? || user.password.blank? || user.first_name.blank? || user.last_name.blank? || User.find_by_email(params[:email]) || User.find_by_username(params[:usersame])
+            # using ||, or, to check if one of these fields is not empty, could still use and tho
+            # is the username and email unique?
+            # can use .empty?, .blank?, .nil?, != ""
+            #if true do this is false then something else
+        end
         # persist new object  so encrypts password
 
         # user is signing in with unique data
