@@ -50,6 +50,6 @@ class UserController < ApplicationController
     #logout /logout delete => clears session
     # process login form
     post '/login' do
-
+        erb :'users/login'
     end
 end
