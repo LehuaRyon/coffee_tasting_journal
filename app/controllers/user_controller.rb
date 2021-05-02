@@ -39,10 +39,17 @@ class UserController < ApplicationController
                     # if user.save = invoke validations
                     # if user does not enter the correct validation, will return false and not persist to database
             # conditionals check to make sure unique before moving on
-
     end
 
     # login /login read => find user and read attributes 
+    # render the login form
+    get '/login' do
+
+    end
 
     #logout /logout delete => clears session
+    # process login form
+    post '/login' do
+
+    end
 end
