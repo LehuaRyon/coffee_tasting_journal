@@ -13,6 +13,8 @@ class UserController < ApplicationController
         # recieve data from form inside params has
         # create new user object with data
         user = User.new(params)
+        # user is not an instance variable bc this data is not rendering in a view
+            # instance variables are to share info from controller to view
         # validate user object
         if user.username.blank? || user.email.blank? || user.password.blank? || user.first_name.blank? || user.last_name.blank? || User.find_by_email(params[:email]) || User.find_by_username(params[:usersame])
             # using ||, or, to check if one of these fields is not empty, could still use and tho
@@ -25,6 +27,10 @@ class UserController < ApplicationController
         else 
             user.save
             # persist new object
+            user.id = session[:user_id]
+            # actually logging in user
+                # user is considered logged in once their id is stored inside of sessions hash
+            # create key in sessions hash
             redirect '/coffees'
             # redirect to index
         end
@@ -44,12 +50,21 @@ class UserController < ApplicationController
     # login /login read => find user and read attributes 
     # render the login form
     get '/login' do
-
+        erb :'users/login'
     end
 
     #logout /logout delete => clears session
     # process login form
     post '/login' do
-        erb :'users/login'
+        # gather data from form through params
+        # find user object
+        user = User.find_by_username(params[:username])
+        # search database and see if user exists with this username
+        # if user exists and if password is correct
+            # login user
+            # redirect
+        # else
+            # invalid login
+            # redirect to '/login'
     end
 end
