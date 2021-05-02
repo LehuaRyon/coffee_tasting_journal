@@ -37,6 +37,10 @@ MVC = Model, View, Controller (separation of responsibilities)
                     - yield, run code till hits yield and run code for next function
                 - a search form, a footer, menu bar, logout button, images
                 - one location means less spelling errors and keeps code dry
+                - <html> going to be using html code
+                  <head> put dependencies I'm going to use
+                  if going to use bootstrap, styling libraries, style sheets if using css, add cdn in head
+                  <title>CoffeeTastingJournal</title> rendering text inside tab in application
         - forms:
             - action attribute: tells form where its going to post
             - method attribute: type of request being made
@@ -113,6 +117,16 @@ RESTful Routes (Representational State Transfer):
     put/patch   /posts/:id  No view     update (patch more accurate when changing couple attributes of object and not entire object itself)
     delete      /posts/:id  No view     delete
 
-
+User Authentication:
+    - ability for our user to sign up, login, and logout
+    - keep track of our user: session
+        - always return all of the objects that belong to that particular user
+Enable Sessions:
+    - manipulate and access sessions to keep track of user
+    - hash stores inside cookies, another hash
+        - cookies shares info about currently logged in user's interactions with server
+        - every time a user starts a new session, that session is stored inside of the cookie
+Implement a User Model:
+    - 
 
 

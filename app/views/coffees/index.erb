@@ -2,7 +2,9 @@
 
 <ul>
     <% @coffees.each do |c| %>
-        <li><%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></li>
+    <li>
+        <a href="/coffees/<%= c.id %>"><%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></a>
+    </li>
     <% end %>
 </ul>
 

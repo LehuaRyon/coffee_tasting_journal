@@ -1,7 +1,5 @@
 class CoffeeController < ApplicationController
 # inherit anything thats defined in Application Controller
-
-#==================== SHOW ==============================
     # user requested all coffees
     # index page
     get '/coffees' do
@@ -16,7 +14,6 @@ class CoffeeController < ApplicationController
 
     # user requested to view form to add a new coffee
     get '/coffees/new' do
-
         erb :'coffees/new'
     end
 
@@ -85,6 +82,5 @@ class CoffeeController < ApplicationController
     end
 end
 
-#--------------------------------------------------------
 
 

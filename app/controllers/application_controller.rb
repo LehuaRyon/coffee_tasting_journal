@@ -14,6 +14,10 @@ class ApplicationController < Sinatra::Base
       # makes app aware going to be using sessions & provide security
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "secret"
+    # "secret" should not be publically availiable to anyone looking at repository
+    # Okay for this project bc not building a system that is going to gather sensitive info from user
   end
   #----------------------------------------------------------
   #==================== INDEX ===============================
