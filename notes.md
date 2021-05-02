@@ -121,11 +121,14 @@ User Authentication:
     - ability for our user to sign up, login, and logout
     - keep track of our user: session
         - always return all of the objects that belong to that particular user
+    - with bcrypt gem, needs a column called password_digest, not password
 Enable Sessions:
     - manipulate and access sessions to keep track of user
     - hash stores inside cookies, another hash
         - cookies shares info about currently logged in user's interactions with server
         - every time a user starts a new session, that session is stored inside of the cookie
+    - with session hash, going to add own key value pair
+        - key = attribute of user, usually user_id, email or username can also identify user session
 Implement a User Model:
     - 
 
