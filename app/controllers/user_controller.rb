@@ -8,8 +8,9 @@ class UserController < ApplicationController
         erb :"users/signup"
     end
 
+    # process signup form, ingest data
     post '/signup' do
-        
+
     end
 
     # login /login read => find user and read attributes 

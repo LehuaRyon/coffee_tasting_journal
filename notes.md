@@ -122,6 +122,7 @@ User Authentication:
     - keep track of our user: session
         - always return all of the objects that belong to that particular user
     - with bcrypt gem, needs a column called password_digest, not password
+        - bcyrpt gives reader and writer for password
 Enable Sessions:
     - manipulate and access sessions to keep track of user
     - hash stores inside cookies, another hash
