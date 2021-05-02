@@ -19,23 +19,27 @@ class UserController < ApplicationController
             # is the username and email unique?
             # can use .empty?, .blank?, .nil?, != ""
             #if true do this is false then something else
+            redirect '/signup'
+            # redirect to signup page
+            # notify username taken, already exsists - flash message
+        else 
+            user.save
+            # persist new object
+            redirect '/coffees'
+            # redirect to index
         end
-        # persist new object  so encrypts password
-
         # user is signing in with unique data
             # maybe user already signed up, looks like acct already existing
             # maybe tried same username as somebody else, username already taken
             # differentiate each object from one another
             # manage data more efficiently with validations
             # activerecord validation methods or use conditionals
-                # conditionals check to make sure unique before moving on
-                # if user is valid
-                    # persist new object
-                    # redirect to index
-                # else
-                    # redirect to signup page
-                # notify username taken, already exsists - flash message
-        
+                # use active record validations will clean it up
+                # adding validator to model
+                    # if user.save = invoke validations
+                    # if user does not enter the correct validation, will return false and not persist to database
+            # conditionals check to make sure unique before moving on
+
     end
 
     # login /login read => find user and read attributes 
