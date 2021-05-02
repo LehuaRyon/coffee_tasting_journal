@@ -18,3 +18,7 @@
 <p><a href="/coffees">See All Coffee Logs</a></p>
 <p><a href="/coffees/<%= @coffee.id %>/edit">Edit This Coffee Log</a></p>
 
+ <form action="/coffees/<%= @@coffee.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Coffee Log">
+</form>

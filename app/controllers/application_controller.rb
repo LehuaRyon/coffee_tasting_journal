@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
 # methods availiable through sinatra base: get, post, patch, delete using blocks, ability to greate routes using those verbs
   # get - finds and diplays data, show me this
   # post - sends data, used for forms (ex. login with submit button), submitting something
+  #==================== CONFIGURATION =======================
   configure do
     # telling to use views
     # set sessions
@@ -14,11 +15,20 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
   end
+  #----------------------------------------------------------
 
   get "/" do
     # get = http verb
     # root route, www.google.com
     erb :welcome
   end
+
+  #==================== HELPERS =============================
+  helpers do
+    def get_coffee
+      @@coffee = Coffee.find_by(id: params[:id])
+    end
+  end
+  #----------------------------------------------------------
 
 end
