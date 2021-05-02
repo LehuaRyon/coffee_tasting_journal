@@ -16,17 +16,19 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
   #----------------------------------------------------------
-
+  #==================== INDEX ===============================
   get "/" do
     # get = http verb
     # root route, www.google.com
     erb :welcome
   end
-
+  #----------------------------------------------------------
   #==================== HELPERS =============================
   helpers do
     def get_coffee
       @@coffee = Coffee.find_by(id: params[:id])
+      # isolated logic in one place
+      # will distribute it to wherever called
     end
   end
   #----------------------------------------------------------
