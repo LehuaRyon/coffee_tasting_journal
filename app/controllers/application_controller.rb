@@ -41,9 +41,18 @@ class ApplicationController < Sinatra::Base
     end
 
     # return the logged in user
-    def 
+    def current_user
+      @current_user ||= User.find_by_id(session[:user_id]) # memoization
+      # going to check instance variable, if already returning value it wont hit db
+      # if doesn't have value, query db and set the instance variable = whatever is found
+      # beneficial = hit as few times as can, hitting db slows app
+    end
 
-    # 
+    # check if user is logged in
+    def logged_in
+      !!session[:user_id]
+      # check if there is value in session hash returning currently logged in user
+    end
   end
   #----------------------------------------------------------
 
