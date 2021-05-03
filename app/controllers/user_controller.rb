@@ -18,7 +18,7 @@ class UserController < ApplicationController
         # validate user object
         if user.username.blank? || user.email.blank? || user.password.blank? || user.first_name.blank? || user.last_name.blank? || User.find_by_email(params[:email]) || User.find_by_username(params[:usersame])
             # using ||, or, to check if one of these fields is not empty, could still use and tho
-            # is the username and email unique?
+            # is the username and email unique?, not creating duplicate user with email or username
             # can use .empty?, .blank?, .nil?, != ""
             #if true do this is false then something else
             redirect '/signup'
@@ -61,10 +61,18 @@ class UserController < ApplicationController
         user = User.find_by_username(params[:username])
         # search database and see if user exists with this username
         # if user exists and if password is correct
+        if user && user.authenticate(params[:password])
+            # access values in hashes, lists hash = pararms, key in brackets [:password] returns the value
+            # authenticate method comes from bcrypt, will encyrpt password and see if it matches the password in database
+            # true and return user object if authenticated, false being returned if not
             # login user
+            session[:user_id] = user.id
             # redirect
-        # else
+            redirect '/coffees'
+        else
+            # want to tell user what went wrong with flash messages
             # invalid login
             # redirect to '/login'
+        end
     end
 end

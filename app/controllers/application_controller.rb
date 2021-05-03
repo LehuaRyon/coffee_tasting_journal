@@ -18,6 +18,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret"
     # "secret" should not be publically availiable to anyone looking at repository
     # Okay for this project bc not building a system that is going to gather sensitive info from user
+    Sinatra:Flash
   end
   #----------------------------------------------------------
   #==================== INDEX ===============================

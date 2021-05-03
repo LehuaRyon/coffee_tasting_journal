@@ -44,8 +44,10 @@ MVC = Model, View, Controller (separation of responsibilities)
         - forms:
             - action attribute: tells form where its going to post
             - method attribute: type of request being made
-            - name attribute (in input field): determines keys in params hash
-                -  
+            - name= attribute (in input field): determines keys in params hash
+                - we receive data from forms inside a params hash
+                - returned as key/value pairs
+                - keys, set on server side by me, values are what users fill out fields with 
     Controller:
         - middle man between model and view
             - view and model should never directly communicate
@@ -64,6 +66,10 @@ MVC = Model, View, Controller (separation of responsibilities)
             - post or patch = receiving data back from user
                 - post = receiving info about new object, not already existing
                 - put or patch = receiving edited info about existing object
+        - .find vs .find_by_<attr>
+            - .find: defaults to id, will return error if does not find user
+            - .find_by: will return nil, won't break code or page
+                - use in conditionals, if else
         - Create in (CRUD)
             - 1. show user form to fill out using http verb, get
             - 2. submit user's filled out form using http verb, post
@@ -123,6 +129,8 @@ User Authentication:
         - always return all of the objects that belong to that particular user
     - with bcrypt gem, needs a column called password_digest, not password
         - bcyrpt gives reader and writer for password
+    - when user submits login form:
+        - use parms hash with key/value pairs to authenticate and sign in user
 Enable Sessions:
     - manipulate and access sessions to keep track of user
     - hash stores inside cookies, another hash
