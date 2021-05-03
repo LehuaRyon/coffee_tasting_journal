@@ -82,19 +82,11 @@ class CoffeeController < ApplicationController
         # no view, recieveing data from user not showing data
         # update the object with new attributes
         get_coffee
-        if @coffee.user == current_user
-            # if user is authorized, go ahead and make update
-            @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
-            # have to parse through params bc parms by itself gives me _method key with patch value
-            redirect "/coffees/#{@coffee.id}"
-        else
-            flash[:not_owner] = "You cannot make this edit. You are not the owner."
-            redirect '/coffees'
-        end
-        # redirect to show page to see updated object
-        # dont need .save bc with .update it persists to db already
-
-        #erb :"/coffees/edit"
+        redirect_if_not_authorized
+        # if user is authorized, go ahead and make update
+        @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
+        # have to parse through params bc parms by itself gives me _method key with patch value
+        redirect "/coffees/#{@coffee.id}"
     end
 
     # user deletes exiting coffee
@@ -116,7 +108,13 @@ private
     end
 
     def redirect_if_not_authorized
-        
+        if @coffee.user != current_user
+            # if user does not match current user
+            flash[:not_owner] = "You cannot make this edit. You are not the owner."
+            redirect '/coffees'
+            # redirect to show page to see updated object
+            # dont need .save bc with .update it persists to db already
+        end 
     end
 end
 
