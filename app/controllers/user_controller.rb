@@ -53,7 +53,6 @@ class UserController < ApplicationController
         erb :'users/login'
     end
 
-    #logout /logout delete => clears session
     # process login form
     post '/login' do
         # gather data from form through params
@@ -74,8 +73,16 @@ class UserController < ApplicationController
             flash[:login_error] = "Invalid login, try again"
             # invalid login
             # in order to show flash message, layout.erb has code in body tag before yield
+            # can put another conditional in here to check password and username to see which one returns false
+                # for flash message that says "invalid password" or "invalid username"
             # redirect to '/login'
             redirect '/login'
         end
+    end
+
+    #logout /logout delete => clears session
+    get '/logout' do
+        session.clear
+        redirect '/login'
     end
 end

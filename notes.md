@@ -37,7 +37,8 @@ MVC = Model, View, Controller (separation of responsibilities)
                 - one location means less spelling errors and keeps code dry
                     - will yield to views 
                     - yield, run code till hits yield and run code for next function
-                    - <% flash.keys.each do |type| %>
+                    - flash messages are great way to navigate user through application
+                      <% flash.keys.each do |type| %>
                       <div data-alert class="flash <%= type %> alert-box radius">
                       <%= flash[type] %>
                       <a href="#" class="close">&times;</a>
