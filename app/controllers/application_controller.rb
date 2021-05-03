@@ -34,11 +34,13 @@ class ApplicationController < Sinatra::Base
   helpers do
   # behaves the same as helpers class
   # makes methods availiable to controllers and views
-    def get_coffee
-      @@coffee = Coffee.find_by(id: params[:id])
+  
+    # def get_coffee
+    #   @@coffee = Coffee.find_by(id: params[:id])
       # isolated logic in one place
       # will distribute it to wherever called
-    end
+    # end
+    # created a get_coffee in private methods in coffee controller
 
     # return the logged in user
     def current_user
