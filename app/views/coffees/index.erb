@@ -2,7 +2,9 @@
 
     <% @coffees.each do |c| %>
         <p><%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
-            <a href="/coffees/<%= c.id %>">Edit</a>
+            <% if current_user == c.user %>
+                <a href="/coffees/<%= c.id %>">Edit</a>
+            <% end %>
         </p>
     <% end %>
 

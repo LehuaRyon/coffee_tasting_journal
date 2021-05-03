@@ -65,18 +65,23 @@ class CoffeeController < ApplicationController
         # retrieve object with givne id
         # autofill a form with the previous info of object
         # render to user can then make changes 
-        get_coffee
+        # get_coffee
+        @coffee = Coffee.find_by(id:params[:id])
+        if @coffee.user == current_user
         # using find_by with activerecord to retrieve object from database
-        erb :"/coffees/edit"
-        # render edit form
-
+            erb :"/coffees/edit"
+            # render edit form
+        else
+            flash[:not_owner] = "You are not the owner"
+            redirect '/coffees'
+        end
     end
 
     # user submitted edit form
     patch '/coffees/:id' do
         # no view, recieveing data from user not showing data
         # update the object with new attributes
-        get_coffee
+        @coffee = Coffee.find_by_id(params[:id])
         @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
         # have to parse through params bc parms by itself gives me _method key with patch value
         redirect "/coffees/#{@coffee.id}"
