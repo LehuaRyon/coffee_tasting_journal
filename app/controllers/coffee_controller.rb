@@ -42,8 +42,21 @@ class CoffeeController < ApplicationController
         # @coffee = Coffee.new(params)
         # hasnt been persisted, so no id, need to be persisted
         # @coffee.save
-        @coffee = Coffee.create(params)
+        @coffee = Coffee.new(params)
+        # changed from .create to .new
+            # now user logged in, set @posts key that associates post with logged in user 
+            # set it = to user logged in
+            # only way to persist that value is by doing .save
+                # .create wouldn't persist modifications to database
         # create and persist at the same time, now has id bc its saved in db
+        # how to associate coffee with current;y logged in user
+        @coffee.user_id = session[:user_id]
+        # another way: user = User.find(session[:user_id]), user.coffees << @coffee
+        # another way: user.coffees.build(params)
+            # associate new coffee with user and create it at same time
+            # activerecord method
+        # persist object to database
+        @coffee.save
         redirect "/coffees/#{@coffee.id}"
         # redirect user to coffee's show page using that new coffee's id in place of the show route's placeholder
     end

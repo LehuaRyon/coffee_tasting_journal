@@ -147,7 +147,16 @@ Enable Sessions:
         - every time a user starts a new session, that session is stored inside of the cookie
     - with session hash, going to add own key value pair
         - key = attribute of user, usually user_id, email or username can also identify user session
-Implement a User Model:
-    - 
+Implement a User Model
+
+Add Protection to Application:
+    - Once user is logged in:
+        - protect views for security and user experience
+            - don't show a edit button if user cannot even edit it = bad user experience
+        - protect route
+    - more important for edit, update, and delete actions
+        - dont want another user to delete, edit, or manipulate a users items
+     
+    
 
 
