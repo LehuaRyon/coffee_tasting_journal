@@ -33,10 +33,18 @@ MVC = Model, View, Controller (separation of responsibilities)
         - id= : designated for css selectors, if using css selectors need to add id attribute to html tags
             - layout.erb:
                 - content that renders on every page throughout application
-                    - will yield to views 
-                    - yield, run code till hits yield and run code for next function
                 - a search form, a footer, menu bar, logout button, images
                 - one location means less spelling errors and keeps code dry
+                    - will yield to views 
+                    - yield, run code till hits yield and run code for next function
+                    - <% flash.keys.each do |type| %>
+                      <div data-alert class="flash <%= type %> alert-box radius">
+                      <%= flash[type] %>
+                      <a href="#" class="close">&times;</a>
+                      </div>
+                      <% end %>
+                        - goes through each flash key, and for each one, it sets up an alert box and prints the text associated with that key
+                        - going over flash hash and looking at keys and rendering key's value
                 - <html> going to be using html code
                   <head> put dependencies I'm going to use
                   if going to use bootstrap, styling libraries, style sheets if using css, add cdn in head

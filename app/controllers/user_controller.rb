@@ -71,10 +71,11 @@ class UserController < ApplicationController
             redirect '/coffees'
         else
             # want to tell user what went wrong with flash messages
-            flash[:login_error] = "Invalid login"
+            flash[:login_error] = "Invalid login, try again"
             # invalid login
             # in order to show flash message, layout.erb has code in body tag before yield
             # redirect to '/login'
+            redirect '/login'
         end
     end
 end
