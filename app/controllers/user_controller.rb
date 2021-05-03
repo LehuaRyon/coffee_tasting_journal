@@ -71,7 +71,9 @@ class UserController < ApplicationController
             redirect '/coffees'
         else
             # want to tell user what went wrong with flash messages
+            flash[:login_error] = "Invalid login"
             # invalid login
+            # in order to show flash message, layout.erb has code in body tag before yield
             # redirect to '/login'
         end
     end
