@@ -67,14 +67,11 @@ class CoffeeController < ApplicationController
         # render to user can then make changes 
         # get_coffee
         get_coffee
-         # using find_by with activerecord to retrieve object from database
-        if @coffee.user == current_user
-            erb :"/coffees/edit"
-            # render edit form
-        else
-            flash[:not_owner] = "You are not the owner"
-            redirect '/coffees'
-        end
+        # using find_by with activerecord to retrieve object from database
+        redirect_if_not_authorized
+        # if user is authorized, continue code below
+        erb :"/coffees/edit"
+        # render edit form
     end
 
     # user submitted edit form
@@ -83,6 +80,7 @@ class CoffeeController < ApplicationController
         # update the object with new attributes
         get_coffee
         redirect_if_not_authorized
+        # if above runs and returns trure, not run below code, user will already be redirected
         # if user is authorized, go ahead and make update
         @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
         # have to parse through params bc parms by itself gives me _method key with patch value
@@ -102,20 +100,21 @@ class CoffeeController < ApplicationController
     end
 
 private
-
+    # methods only pertaining to one controller
     def get_coffee
         @coffee = Coffee.find_by(id:params[:id])
     end
 
     def redirect_if_not_authorized
         if @coffee.user != current_user
-            # if user does not match current user
+            # if user of that coffee does not match current user
             flash[:not_owner] = "You cannot make this edit. You are not the owner."
             redirect '/coffees'
             # redirect to show page to see updated object
             # dont need .save bc with .update it persists to db already
         end 
     end
+    # if was more generic, could be a helper in app controller
 end
 
 

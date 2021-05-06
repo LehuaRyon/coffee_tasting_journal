@@ -1,7 +1,7 @@
   <h1>Edit<%= @coffee.name %></h1>
 
   <form action="/coffees/<%= @@coffee.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="_method" value="patch"/>
 
     <label for="name">Name:</label>
     <input type="text" name="name" value="<%= @@coffee.name %>"/>
@@ -26,5 +26,5 @@
     <label for="name">Notes:</label>
     <textarea name="notes"><%= @@coffee.notes %></textarea>
 
-    <input type="submit" value="Submit Edited Coffee Log">
+    <input type="submit" value="Submit Edited Coffee Log"/>
 </form>

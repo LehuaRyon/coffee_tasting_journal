@@ -35,13 +35,6 @@ class ApplicationController < Sinatra::Base
   # behaves the same as helpers class
   # makes methods availiable to controllers and views
   
-    # def get_coffee
-    #   @@coffee = Coffee.find_by(id: params[:id])
-      # isolated logic in one place
-      # will distribute it to wherever called
-    # end
-    # created a get_coffee in private methods in coffee controller
-
     # return the logged in user
     def current_user
       @current_user ||= User.find_by_id(session[:user_id]) # memoization

@@ -13,7 +13,7 @@ Sinatra & Activerecord are two separate technologies, can work separately
     - user login, store users data to log back in, render homepage & data on homepage
 
 DSL = Domain Specific Language
-MVC = Model, View, Controller (separation of responsibilities)
+MVC = Minimum Viable Product (separation of responsibilities)
     Model:
         - blueprint for how each object is going to look like
         - how data in tables is going to be associated with one another
