@@ -10,11 +10,15 @@ Project Requirements:
     - retrieve data from our databases
     - persist data to our databases
     - set up models to inherit from ActiveRecord
-3. Use multiple models.
+        - 1. & 2. work together, used corneal to start foundations of app, inherit from sinatra in controller
+3. Use multiple models. 
+    - user model
+    - another model
+    - bonus: add another model for has_many_through
 4. Use at least one has_many relationship on a User model and one belongs_to relationship on another model.
     - has_many_through, will be a requirement in Rails
-        - User able to create a coffee, therefore User would be able to have many coffees
-        - Coffees belongs to user
+        - User has many coffees
+        - Coffee belongs to user
 5. Must have user accounts - users must be able to sign up, sign in, and sign out.
     - sessions
     - user authentication

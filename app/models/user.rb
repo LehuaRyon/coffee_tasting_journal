@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    # has_many :coffees
+    has_many :coffees
 
     # methods I get:
     # user.coffees

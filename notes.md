@@ -118,6 +118,9 @@ Get Params Data through:
 persist = adding data to database
 models = singular
 databases/tables = plural
+build = creates object with established connection but does not save object to database
+create = creates and saves object to database
+nil = can't chain methods on, empty array = can chain methods on
 
 RESTful Routes (Representational State Transfer):
     - transferring all data back and forth based on requests beings made

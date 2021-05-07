@@ -91,18 +91,21 @@ class CoffeeController < ApplicationController
     delete '/coffees/:id' do
         # no view
         get_coffee
-        @coffee.destroy
-        # activerecord method deletes entire object
-        redirect '/coffees'
-        # redirect to index page/main page
-
-        # add if @coffee.user == current_user
+        if @coffee.user.id == current_user.id
+            # @coffee.user == current_user
+            @coffee.destroy
+            # activerecord method deletes entire object
+            redirect '/coffees'
+            # redirect to index page/main page
+        else
+            redirect '/coffees'
     end
 
 private
     # methods only pertaining to one controller
     def get_coffee
         @coffee = Coffee.find_by(id:params[:id])
+        #  @coffee = Coffee.find_by_id(params[:id])
     end
 
     def redirect_if_not_authorized
