@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
     # activerecord giv us this method
     # adds salt, to the user's password
     # salt = a randomized character string & user's password gets embedded in that string, hard to hack
+    validates_presence_of :username, :email, :password, :first_name, :last_name
+    validates_uniqueness_of :username, :email
 end
