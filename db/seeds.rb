@@ -4,12 +4,6 @@ Coffee.create(user_id: 3, name: "Flatlander", roaster: "PT's Coffee", producer: 
 Coffee.create(user_id: 4, name: "Civitas Blend", roaster: "Huck", producer: "Latin America", variety: "Arabica", process: "Washed", notes: "Dark sugars, chocolate, toffee, nuttiness, ripe raisin")
 Coffee.create(user_id: 5, name: "Blue Orchid Blend", roaster: "Huck", producer: "Peru & Brazil", variety: "Colombia", process: "Washed, natural/dry", notes: "Dark chocolate, caramel, roasted walnuts, floral")
 
-Entry.create(title: "Southern Weather, Onyx Coffee Lab", content: "I rate this coffee a 5/5. Would most definitely buy again.", coffee_id: 1, created_at: "2021-04-01 12:00:00", updated_at: "2021-04-02 12:00:00")
-Entry.create(title: "Flying Monkey, PT's Coffee", content: "I rate this coffee a 4/5. Would definitely buy again.", coffee_id: 2, created_at: "2021-04-03 12:00:00", updated_at: "2021-04-04 12:00:00")
-Entry.create(title: "Flatlander, PT's Coffee", content: "I rate this coffee a 3/5. Would maybe buy again.", coffee_id: 3, created_at: "2021-04-05 12:00:00", updated_at: "2021-04-06 12:00:00")
-Entry.create(title: "Civitas Blend, Huck", content: "I rate this coffee a 2/5. Would probably not buy again.", coffee_id: 4, created_at: "2021-04-07 12:00:00", updated_at: "2021-04-08 12:00:00")
-Entry.create(title: "Blue Orchid Blend, Huck", content: "I rate this coffee a 1/5. Would not buy again.", coffee_id: 5, created_at: "2021-04-09 12:00:00", updated_at: "2021-04-10 12:00:00")
-
 User.create(username: "H_Brown", email: "harrybrown@gmail.com", password: "password", first_name: "Harry", last_name: "Brown")
 User.create(username: "L_Smith", email: "leonasmith@gmail.com", password: "password", first_name: "Leona", last_name: "Smith")
 User.create(username: "O_King", email: "owenking@gmail.com", password: "password", first_name: "Owen", last_name: "King")
