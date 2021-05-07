@@ -6,10 +6,6 @@ class Coffee < ActiveRecord::Base
     # coffee.user= / set the user that the coffee belongs to
     # coffee.build_user(hash of attributes)
     # coffee.create_user(hash of attributes)
-
-    # belongs_to :entry
-    # what kind of table is coffee: join table
-    has_many :entries
     validates_presence_of :name, :roaster, :producer, :variety, :process, :notes
 	validates_uniqueness_of :name
 end
