@@ -1,5 +1,6 @@
 class CoffeeController < ApplicationController
 # inherit anything thats defined in Application Controller
+
     # user requested all coffees
     # index page
     get '/coffees' do
@@ -31,7 +32,7 @@ class CoffeeController < ApplicationController
         erb :'coffees/show'
     end
 
-    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes, file in read in order
+    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes, file reads in order
 
     # user submitted new coffee form, and redirected to see coffee just created
     post '/coffees' do
@@ -61,8 +62,9 @@ class CoffeeController < ApplicationController
         # redirect user to coffee's show page using that new coffee's id in place of the show route's placeholder
     end
     
+    # user requested edit form for 1 coffee
     get '/coffees/:id/edit' do
-        # retrieve object with givne id
+        # retrieve object with given id
         # autofill a form with the previous info of object
         # render to user can then make changes 
         # get_coffee
@@ -80,7 +82,7 @@ class CoffeeController < ApplicationController
         # update the object with new attributes
         get_coffee
         redirect_if_not_authorized
-        # if above runs and returns trure, not run below code, user will already be redirected
+        # if above runs and returns true, not run below code, user will already be redirected
         # if user is authorized, go ahead and make update
         @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
         # have to parse through params bc parms by itself gives me _method key with patch value

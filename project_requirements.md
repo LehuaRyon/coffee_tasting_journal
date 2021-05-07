@@ -26,6 +26,7 @@ Project Requirements:
 5. Must have user accounts - users must be able to sign up, sign in, and sign out.
     - sessions
     - user authentication
+        - 
 
 6. Validate uniqueness of user login attribute (username or email).
     - Active Record validations
@@ -52,15 +53,16 @@ Project Requirements:
     - add validations to form where user can create on object
         - user wants to submit form for new post, make sure user is submitting data and not empty form
         - will make database not have blank data
-    - in coffee:
-        - validates :name, :roaster, :producer, :variety, :process, :notes, presence: true
+        - in coffee:
+            - validates :name, :roaster, :producer, :variety, :process, :notes, presence: true
             = validates_presence_of :name, :roaster, :producer, :variety, :process, :notes
-        - validates :name, uniqueness: true
+            - validates :name, uniqueness: true
             = validates_uniqueness_of :name
-    - in user:
-        - validates :username, :email, :password, :first_name, :last_name, presence: true
+        - in user:
+            - validates :username, :email, :password, :first_name, :last_name, presence: true
             = validates_presence_of :username, :email, :password, :first_name, :last_name
-        - validates :username, :email, uniqueness: true
+            - validates :username, :email, uniqueness: true
             = validates_uniqueness_of :username, :email
+
 10. BONUS: Display validation failures to user with error messages (This is an optional feature, challenge yourself and give it a shot!)
     - error messages generated when validations return false (boolean value)
