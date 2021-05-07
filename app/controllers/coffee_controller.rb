@@ -99,6 +99,7 @@ class CoffeeController < ApplicationController
             # redirect to index page/main page
         else
             redirect '/coffees'
+        end
     end
 
 private

@@ -10,6 +10,6 @@ class Coffee < ActiveRecord::Base
     # belongs_to :entry
     # what kind of table is coffee: join table
     has_many :entries
-    # validates_presence_of :name, :duration_in_days, :languages
-	# validates_uniqueness_of :name
+    validates_presence_of :name, :roaster, :producer, :variety, :process, :notes
+	validates_uniqueness_of :name
 end
