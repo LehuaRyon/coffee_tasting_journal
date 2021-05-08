@@ -41,7 +41,6 @@ class CoffeeController < ApplicationController
 
     # user submitted new coffee form, and redirected to see coffee just created
     post '/coffees' do
-        redirect_if_not_logged_in 
         # adding new coffee to collection of coffees
         # create new coffee
         # redirect user
@@ -57,14 +56,19 @@ class CoffeeController < ApplicationController
                 # .create wouldn't persist modifications to database
         # create and persist at the same time, now has id bc its saved in db
         # how to associate coffee with currently logged in user
-        @coffee.user_id = session[:user_id]
+        # @coffee.user_id = session[:user_id]
+        @coffee.user_id = current_user.id
         # another way: user = User.find(session[:user_id]), user.coffees << @coffee
         # another way: user.coffees.build(params)
             # associate new coffee with user and create it at same time
             # activerecord method
         # persist object to database
-        @coffee.save
-        redirect "/coffees/#{@coffee.id}"
+        if @coffee.save
+            redirect "/coffees/#{@coffee.id}"
+        else
+            flash[:coffee_attributes_not_all_filled_out] = "Please fill out every box.  Insert 'N/A' for the boxes you do not have information for."
+            redirect '/coffees/new'
+        end
         # redirect user to coffee's show page using that new coffee's id in place of the show route's placeholder
     end
 

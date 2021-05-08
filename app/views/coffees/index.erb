@@ -3,7 +3,7 @@
 <p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
 
     <% @coffees.each do |c| %>
-        <p><%= c.id %> - <%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
+        <p><%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
             <% if current_user == c.user %>
                 <a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>
             <% end %>
