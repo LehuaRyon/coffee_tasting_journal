@@ -83,17 +83,14 @@ class CoffeeController < ApplicationController
         # get_coffee
         get_coffee
         # using find_by with activerecord to retrieve object from database
-        # redirect_if_not_authorized
+        redirect_if_not_authorized
         # if user is authorized, continue code below
         erb :'/coffees/edit'
         # render edit form
-        unless redirect_if_not_authorized
-        end
     end
 
     # user submitted edit form
     patch '/coffees/:id' do
-        redirect_if_not_logged_in 
         # no view, recieveing data from user not showing data
         # update the object with new attributes
         get_coffee
@@ -107,7 +104,6 @@ class CoffeeController < ApplicationController
 
     # user deletes exiting coffee
     delete '/coffees/:id' do
-        redirect_if_not_logged_in 
         # no view
         get_coffee
         if @coffee.user.id == current_user.id
@@ -117,6 +113,7 @@ class CoffeeController < ApplicationController
             redirect '/coffees'
             # redirect to index page/main page
         else
+            flash[:not_owner] = "You cannot make this deletion. You are not the owner."
             redirect '/coffees'
         end
     end
@@ -129,7 +126,7 @@ private
     end
 
     def redirect_if_not_authorized
-        if @coffee.user != current_user
+        if @coffee.user.id != current_user.id
             # if user of that coffee does not match current user
             flash[:not_owner] = "You cannot make this edit. You are not the owner."
             redirect '/coffees'
