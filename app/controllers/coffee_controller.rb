@@ -83,10 +83,12 @@ class CoffeeController < ApplicationController
         # get_coffee
         get_coffee
         # using find_by with activerecord to retrieve object from database
-        redirect_if_not_authorized
+        # redirect_if_not_authorized
         # if user is authorized, continue code below
         erb :'/coffees/edit'
         # render edit form
+        unless redirect_if_not_authorized
+        end
     end
 
     # user submitted edit form
