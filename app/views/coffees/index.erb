@@ -1,5 +1,7 @@
 <h1>Coffees</h1>
 
+<p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
+
     <% @coffees.each do |c| %>
         <p><%= c.id %> - <%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
             <% if current_user == c.user %>
@@ -8,4 +10,3 @@
         </p>
     <% end %>
 
-<p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
