@@ -32,7 +32,6 @@ class ApplicationController < Sinatra::Base
   helpers do
   # behaves the same as helpers class
   # makes methods availiable to controllers and views
-  
     # return the logged in user
     def current_user
       @current_user ||= User.find_by_id(session[:user_id]) # memoization
@@ -46,6 +45,12 @@ class ApplicationController < Sinatra::Base
       # session[:user_id], two !! infront
       !!current_user
       # check if there is value in session hash returning currently logged in user
+    end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect "/login"
+      end
     end
 
     def redirect_if_logged_in
