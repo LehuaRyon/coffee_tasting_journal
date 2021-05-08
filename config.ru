@@ -12,7 +12,6 @@ require_relative './config/environment'
 
 use Rack::MethodOverride # middleware
 use UserController
-use EntryController
 use CoffeeController
 run ApplicationController
 # this controller exists too and app will be using it

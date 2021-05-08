@@ -32,8 +32,6 @@ class CoffeeController < ApplicationController
         erb :'coffees/show'
     end
 
-    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes, file reads in order
-
     # user submitted new coffee form, and redirected to see coffee just created
     post '/coffees' do
         # adding new coffee to collection of coffees
@@ -50,7 +48,7 @@ class CoffeeController < ApplicationController
             # only way to persist that value is by doing .save
                 # .create wouldn't persist modifications to database
         # create and persist at the same time, now has id bc its saved in db
-        # how to associate coffee with current;y logged in user
+        # how to associate coffee with currently logged in user
         @coffee.user_id = session[:user_id]
         # another way: user = User.find(session[:user_id]), user.coffees << @coffee
         # another way: user.coffees.build(params)
@@ -61,6 +59,8 @@ class CoffeeController < ApplicationController
         redirect "/coffees/#{@coffee.id}"
         # redirect user to coffee's show page using that new coffee's id in place of the show route's placeholder
     end
+
+    # user requested to view form to add a new coffee 'coffees/new' => had to move above becuase of dynamic routes, file reads in order
     
     # user requested edit form for 1 coffee
     get '/coffees/:id/edit' do
@@ -72,7 +72,7 @@ class CoffeeController < ApplicationController
         # using find_by with activerecord to retrieve object from database
         redirect_if_not_authorized
         # if user is authorized, continue code below
-        erb :"/coffees/edit"
+        erb :'/coffees/edit'
         # render edit form
     end
 

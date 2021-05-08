@@ -23,10 +23,48 @@ Project Requirements:
         - User has many coffees
         - Coffee belongs to user
 
-5. Must have user accounts - users must be able to sign up, sign in, and sign out.
+5. Must have user accounts - users must be able to sign up, login, and logout.
     - sessions
     - user authentication
-        - 
+        - sign up:
+            - take user to form in signup.erb
+            - get '/signup' do
+                erb :"users/signup"
+              end
+            - create the user with post route
+            - post '/signup' do
+                user = User.new(params)
+                if user.username.blank? || user.email.blank? || user.password.blank? || user.first_name.blank? || user.last_name.blank? || User.find_by_email(params[:email]) || User.find_by_username(params[:usersame])
+                    redirect '/signup'
+                else
+                    user.save
+                    user.id = session[:user_id]
+                    redirect '/coffees'
+                end
+              end
+        - login:
+            - take user to form in login.erb
+            - get '/login' do
+                erb :'users/login'
+              end
+            - process login form
+            - post '/login' do
+                user = User.find_by_username(params[:username])
+                if user && user.authenticate(params[:password])
+                     session[:user_id] = user.id
+                     redirect '/coffees'
+                else 
+                    flash[:login_error] = "Invalid login, try again"
+                    redirect '/login'
+                end
+              end
+        - logout: 
+            - clear session
+            -  get '/logout' do
+                session.clear
+                redirect '/login'
+              end
+            - added logout link in footer
 
 6. Validate uniqueness of user login attribute (username or email).
     - Active Record validations

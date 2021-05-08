@@ -1,9 +1,9 @@
 <h1>Coffees</h1>
 
     <% @coffees.each do |c| %>
-        <p><%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
+        <p><%= c.id %> - <%= c.name %> - <%= c.roaster %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
             <% if current_user == c.user %>
-                <a href="/coffees/<%= c.id %>">Edit</a>
+                <a href="/coffees/<%= c.id %>/edit">Edit</a>
             <% end %>
         </p>
     <% end %>
