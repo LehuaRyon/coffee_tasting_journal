@@ -4,8 +4,12 @@ class CoffeeController < ApplicationController
     # user requested all coffees
     # index page
     get '/coffees' do
-        redirect_if_not_logged_in 
-        @coffees = Coffee.all
+        redirect_if_not_logged_in
+        if current_user.coffees != []
+            @coffees = current_user.coffees
+        else
+            @coffees = Coffee.all
+        end
         # return all coffees I created 
         # make call to database and gather all
         # using active record mehthod to reach into table, controller communicating with model, store those values in instance variable
