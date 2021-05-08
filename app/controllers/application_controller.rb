@@ -22,15 +22,13 @@ class ApplicationController < Sinatra::Base
     # by using Flash, I get Flash=>{} hash created
       # whenever I show a flash message, populate flash has with key/value pair
   end
-  #----------------------------------------------------------
-  #==================== INDEX ===============================
+
   get "/" do
     # get = http verb
     # root route, www.google.com
-    erb :welcome
+    erb :home
   end
-  #----------------------------------------------------------
-  #==================== HELPERS =============================
+
   helpers do
   # behaves the same as helpers class
   # makes methods availiable to controllers and views
@@ -49,6 +47,5 @@ class ApplicationController < Sinatra::Base
       # check if there is value in session hash returning currently logged in user
     end
   end
-  #----------------------------------------------------------
 
 end

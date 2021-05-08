@@ -15,10 +15,10 @@
 <h2>Notes:</h2>
 <p><%= @coffee.notes %></p>
 
-<p><a href="/coffees">See All Coffee Logs</a></p>
-<p><a href="/coffees/<%= @coffee.id %>/edit">Edit This Coffee Log</a></p>
+<p><a href="/coffees"><button>See All Coffee Logs</button></a></p>
+<p><a href="/coffees/<%= @coffee.id %>/edit"><button>Edit This Coffee Log</button></a></p>
 
- <form action="/coffees/<%= @coffee.id %>" method="post">
+<form action="/coffees/<%= @coffee.id %>" method="post">
     <input type="hidden" name="_method" value="delete"/>
     <input type="submit" value="Delete Coffee Log"/>
 </form>
