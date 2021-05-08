@@ -20,5 +20,7 @@
 
 <form action="/coffees/<%= @coffee.id %>" method="post">
     <input type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete Coffee Log"/>
+    <input type="submit" value="Delete This Coffee Log"/>
 </form>
+
+<p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
