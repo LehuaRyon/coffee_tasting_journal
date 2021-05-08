@@ -4,6 +4,7 @@ class CoffeeController < ApplicationController
     # user requested all coffees
     # index page
     get '/coffees' do
+        redirect_if_not_logged_in 
         @coffees = Coffee.all
         # return all coffees I created 
         # make call to database and gather all
@@ -15,12 +16,14 @@ class CoffeeController < ApplicationController
 
     # user requested to view form to add a new coffee
     get '/coffees/new' do
+        redirect_if_not_logged_in 
         erb :'coffees/new'
     end
 
     # user requested details of 1 coffee
     # show page
     get '/coffees/:id' do
+        redirect_if_not_logged_in 
         # retieve requested post w/params
         # show details of that post
         # key is :id, value is whatever request made
@@ -34,6 +37,7 @@ class CoffeeController < ApplicationController
 
     # user submitted new coffee form, and redirected to see coffee just created
     post '/coffees' do
+        redirect_if_not_logged_in 
         # adding new coffee to collection of coffees
         # create new coffee
         # redirect user
@@ -64,6 +68,7 @@ class CoffeeController < ApplicationController
     
     # user requested edit form for 1 coffee
     get '/coffees/:id/edit' do
+        redirect_if_not_logged_in 
         # retrieve object with given id
         # autofill a form with the previous info of object
         # render to user can then make changes 
@@ -78,6 +83,7 @@ class CoffeeController < ApplicationController
 
     # user submitted edit form
     patch '/coffees/:id' do
+        redirect_if_not_logged_in 
         # no view, recieveing data from user not showing data
         # update the object with new attributes
         get_coffee
@@ -91,6 +97,7 @@ class CoffeeController < ApplicationController
 
     # user deletes exiting coffee
     delete '/coffees/:id' do
+        redirect_if_not_logged_in 
         # no view
         get_coffee
         if @coffee.user.id == current_user.id
