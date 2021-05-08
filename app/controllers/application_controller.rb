@@ -41,11 +41,19 @@ class ApplicationController < Sinatra::Base
       # beneficial = hit as few times as can, hitting db slows app
     end
 
-    # check if user is logged in
-    def logged_in
-      !!session[:user_id]
+     # check if user is logged in
+    def logged_in?
+      # session[:user_id], two !! infront
+      !!current_user
       # check if there is value in session hash returning currently logged in user
     end
+
+    def redirect_if_logged_in
+      if logged_in?
+        redirect "/coffees"
+      end
+    end
+
   end
 
 end

@@ -15,12 +15,12 @@
     <% end %>
   <%= yield %>
   <footer class="branding">
-      <% if logged_in %>
+      <% if logged_in? %>
         <h4>Welcome <%= current_user.username %></h4>
         <h4><a href="/logout">Log Out</a></h4>
       <% end %>
       <small>&copy; 2021 <strong>Coffee Tasting Journal - Jasmine Ryon</strong></small>
-    </footer>
+  </footer>
   </body>
 </html>
 

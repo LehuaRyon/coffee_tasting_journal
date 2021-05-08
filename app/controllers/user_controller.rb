@@ -85,4 +85,5 @@ class UserController < ApplicationController
         session.clear
         redirect '/login'
     end
+
 end
