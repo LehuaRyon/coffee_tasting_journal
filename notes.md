@@ -14,6 +14,8 @@ Sinatra & Activerecord are two separate technologies, can work separately
 
 DSL = Domain Specific Language
 MVC = Minimum Viable Product (separation of responsibilities)
+CSS = Cascading Style Sheets
+HTML = HyperText Markup Language
     Model:
         - blueprint for how each object is going to look like
         - how data in tables is going to be associated with one another

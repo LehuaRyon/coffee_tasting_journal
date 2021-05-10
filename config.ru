@@ -4,7 +4,9 @@
 
 # notify rack, here are all coponents of app and load anything in these paths, controllers
 
-require_relative './config/environment'
+# require_relative './config/environment'
+require './config/environment'
+# changed to require because I was not able to load tux with require relative.
 
 # if ActiveRecord::Migrator.needs_migration?
 #   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'

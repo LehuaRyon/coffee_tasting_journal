@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>  
   <h1>Editting <%= @coffee.name %></h1>
 
   <form action="/coffees/<%= @coffee.id %>" method="post">
@@ -34,9 +36,10 @@
     <br>
 
     <input type="submit" value="Submit Edited Coffee Log"/>
-</form>
+  </form>
 
-<form action="/coffees/<%= @coffee.id %>" method="post">
-    <input type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete Coffee Log"/>
-</form>
+  <form action="/coffees/<%= @coffee.id %>" method="post">
+      <input type="hidden" name="_method" value="delete"/>
+      <input type="submit" value="Delete Coffee Log"/>
+  </form>
+</html> 
