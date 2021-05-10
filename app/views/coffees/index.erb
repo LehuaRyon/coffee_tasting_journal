@@ -3,13 +3,15 @@
 <h1>Coffees</h1>
 
 <p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
-
+<ol>
     <% @coffees.each do |c| %>
+    <li>
         <p><%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
             <% if current_user == c.user %>
                 <a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>
             <% end %>
         </p>
+    </li>    
     <% end %>
-
+</ol>
 </html> 
