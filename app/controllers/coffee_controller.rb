@@ -66,7 +66,7 @@ class CoffeeController < ApplicationController
         if @coffee.save
             redirect "/coffees/#{@coffee.id}"
         else
-            flash[:coffee_attributes_not_all_filled_out] = "Please fill out every box.  Insert 'N/A' for the boxes you do not have information for."
+            flash[:coffee_attributes_not_all_filled_out] = "Please fill out every field.  Insert 'N/A' for the fields you do not have information for."
             redirect '/coffees/new'
         end
         # redirect user to coffee's show page using that new coffee's id in place of the show route's placeholder

@@ -21,6 +21,7 @@ class UserController < ApplicationController
             # is the username and email unique?, not creating duplicate user with email or username
             # can use .empty?, .blank?, .nil?, != ""
             #if true do this is false then something else
+            flash[:signup_error] = "Invalid sign up, try again. Please fill out all the fields."
             redirect '/signup'
             # redirect to signup page
             # notify username taken, already exsists - flash message
@@ -70,7 +71,7 @@ class UserController < ApplicationController
             redirect '/coffees'
         else
             # want to tell user what went wrong with flash messages
-            flash[:login_error] = "Invalid login, try again"
+            flash[:login_error] = "Invalid login, try again. Please fill out both fields."
             # invalid login
             # in order to show flash message, layout.erb has code in body tag before yield
             # can put another conditional in here to check password and username to see which one returns false
