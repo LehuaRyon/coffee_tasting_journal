@@ -113,7 +113,7 @@ class CoffeeController < ApplicationController
             redirect '/coffees'
             # redirect to index page/main page
         else
-            flash[:not_owner] = "You cannot make this deletion. You are not the owner."
+            flash[:not_owner_deletion] = "You cannot make this deletion. You are not the owner."
             redirect '/coffees'
         end
     end
@@ -128,7 +128,7 @@ private
     def redirect_if_not_authorized
         if @coffee.user.id != current_user.id
             # if user of that coffee does not match current user
-            flash[:not_owner] = "You cannot make this edit. You are not the owner."
+            flash[:not_owner_edit] = "You cannot make this edit. You are not the owner."
             redirect '/coffees'
             # redirect to show page to see updated object
             # dont need .save bc with .update it persists to db already
