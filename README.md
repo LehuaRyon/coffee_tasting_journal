@@ -47,10 +47,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Coffee Tasting Journal project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/LehuaRyon/coffee_tasting_journal/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Coffee Tasting Journal project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/LehuaRyon/coffee_tasting_journal/blob/master/CODE_OF_CONDUCT.md).
 
 ## Additional Links
-
-- [Contributing](CONTRIBUTING.md)
-- [License](LICENSE.md)
 - [Spec](spec.md)
