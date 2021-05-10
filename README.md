@@ -43,7 +43,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/LehuaR
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT). (license.md)
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT). (https://github.com/LehuaRyon/coffee_tasting_journal/blob/master/LICENSE.md)
 
 ## Code of Conduct
 
