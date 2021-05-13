@@ -8,4 +8,5 @@ class Coffee < ActiveRecord::Base
     # coffee.create_user(hash of attributes)
     validates_presence_of :name, :roaster, :producer, :variety, :process, :notes
 	validates_uniqueness_of :name
+    #  prevent bad data entry by users.
 end

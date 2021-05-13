@@ -1,5 +1,5 @@
 What is sinatra?
-    - is a web application framework, library that utilizes Ruby language to formulate a fuctioning web app on rack interface
+    - is a web application framework, library that utilizes Ruby language to formulate a functioning web app on rack interface
         - rack is a middleware, bridge between sinatra code to render to user 
     - web application = encapsulates different urls to produce major app
     - websites = each individual url
@@ -13,7 +13,7 @@ Sinatra & Activerecord are two separate technologies, can work separately
     - user login, store users data to log back in, render homepage & data on homepage
 
 DSL = Domain Specific Language
-MVC = Minimum Viable Product (separation of responsibilities)
+MVC = Model, View, Controller, Minimum Viable Product (separation of responsibilities)
 CSS = Cascading Style Sheets
 HTML = HyperText Markup Language
     Model:
@@ -105,8 +105,8 @@ Request/Response flows:
 Get Params Data through: 
     - keep key names aligned with columns in database
         - two ways to create coffee object:
-            - not needed bc of above: @coffee = Coffee.new(name: params[:name], roaster: params[:roaster], etc.)
             - simplified & better: @coffee = Coffee.new(params)
+            - not needed bc of above: @coffee = Coffee.new(name: params[:name], roaster: params[:roaster], etc.)
     - dynamic routes, URL
         - key will be stored inside of params hash
         - value is whatever was replacing placeholder

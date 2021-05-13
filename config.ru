@@ -8,10 +8,11 @@
 require './config/environment'
 # changed to require because I was not able to load tux with require relative.
 
-# if ActiveRecord::Migrator.needs_migration?
-#   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
-# end
+if ActiveRecord::Base.connection.migration_context.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate SINATRA_ENV=test` to resolve the issue.'
+end
 
+# Allows the method to be overridden if params[:_method] is set. This is the middleware which supports the PUT and DELETE HTTP method types.
 use Rack::MethodOverride # middleware
 use UserController
 use CoffeeController

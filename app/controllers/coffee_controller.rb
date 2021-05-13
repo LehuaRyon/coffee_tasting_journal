@@ -136,6 +136,3 @@ private
     end
     # if was more generic, could be a helper in app controller
 end
-
-
-
