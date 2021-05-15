@@ -16,6 +16,7 @@ class UserController < ApplicationController
         # user is not an instance variable bc this data is not rendering in a view
             # instance variables are to share info from controller to view
         # validate user object
+        # Signup method checks for duplication accounts and empty input fields
         if user.username.blank? || user.email.blank? || user.password.blank? || user.first_name.blank? || user.last_name.blank? || User.find_by_email(params[:email]) || User.find_by_username(params[:usersame])
             # using ||, or, to check if one of these fields is not empty, could still use and tho
             # is the username and email unique?, not creating duplicate user with email or username

@@ -33,6 +33,7 @@ class ApplicationController < Sinatra::Base
   # behaves the same as helpers class
   # makes methods availiable to controllers and views
     # return the logged in user
+    # define what a current user is in relation to user id
     def current_user
       @current_user ||= User.find_by_id(session[:user_id]) # memoization
       # going to check instance variable, if already returning value it wont hit db
@@ -40,13 +41,14 @@ class ApplicationController < Sinatra::Base
       # beneficial = hit as few times as can, hitting db slows app
     end
 
-     # check if user is logged in
+     # verifty if a user islogged in
     def logged_in?
       # session[:user_id], two !! infront
       !!current_user
       # check if there is value in session hash returning currently logged in user
     end
 
+    # require a user to be logged in to have access to certain veiws
     def redirect_if_not_logged_in
       if !logged_in?
         flash[:not_logged_in] = "You need to be logged in first, in order to view what you would like to see."

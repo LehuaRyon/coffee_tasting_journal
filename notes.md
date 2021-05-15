@@ -104,6 +104,8 @@ Request/Response flows:
 
 Get Params Data through: 
     - keep key names aligned with columns in database
+    - Params is the vehicle holding the information and that is being passed in by the user
+        - a hash that goes back and forth between the views and the controller.
         - two ways to create coffee object:
             - simplified & better: @coffee = Coffee.new(params)
             - not needed bc of above: @coffee = Coffee.new(name: params[:name], roaster: params[:roaster], etc.)

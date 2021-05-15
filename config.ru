@@ -1,6 +1,7 @@
 # how we enter application, instead of environment.rb like before
 # where you mount controllers
   # have to mount every controller than is defined
+# purpose of config.ru is to detail to Rack (Sinatra gem is built on top of Rack) the environment requirements of the application and start the application, mount my application controllers. 
 
 # notify rack, here are all coponents of app and load anything in these paths, controllers
 
