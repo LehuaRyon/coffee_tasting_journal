@@ -19,7 +19,7 @@
         </div>
       <% end %>
     <%= yield %>
-    <footer class="branding">
+    <footer class="class= branding fixed-bottom">
         <% if logged_in? %>
           <h5>Welcome <%= current_user.username %> <a href="/logout"><button>Log Out</button></a></h5>
         <% end %>
