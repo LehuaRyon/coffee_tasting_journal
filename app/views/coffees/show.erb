@@ -1,26 +1,28 @@
-<h1><%= @coffee.name %></h1>
+<h2><%= @coffee.name %></h2>
 
-<h2>Roaster:</h2>
+<img style="float: right; margin: 0px 15px 5px 5px;" src="https://images.unsplash.com/photo-1510922903530-28ecf3f00362?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29mZmVlJTIwam91cm5hbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" width="435" />
+
+<h4>Roaster:</h4>
 <p><%= @coffee.roaster %></p>
 
-<h2>Producer:</h2>
+<h4>Producer:</h4>
 <p><%= @coffee.producer %></p>
 
-<h2>Variety:</h2>
+<h4>Variety:</h4>
 <p><%= @coffee.variety %></p>
 
-<h2>Process:</h2>
+<h4>Process:</h4>
 <p><%= @coffee.process %></p>
 
-<h2>Notes:</h2>
+<h4>Notes:</h4>
 <p><%= @coffee.notes %></p>
 
 <p><a href="/coffees"><button>See All Coffee Logs</button></a></p>
 <p><a href="/coffees/<%= @coffee.id %>/edit"><button>Edit This Coffee Log</button></a></p>
 
 <form action="/coffees/<%= @coffee.id %>" method="post">
-    <input type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete This Coffee Log"/>
+    <p><input type="hidden" name="_method" value="delete"/>
+    <input type="submit" value="Delete This Coffee Log"/></p>
 </form>
 
 <p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>

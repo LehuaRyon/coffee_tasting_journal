@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/lux/bootstrap.min.css"/>
   <link rel="stylesheet" href="/stylesheets/main.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Coffee Tasting Journal: Track & Log Coffee Varieties</h1>
@@ -19,12 +21,10 @@
     <%= yield %>
     <footer class="branding">
         <% if logged_in? %>
-          <h4>Welcome <%= current_user.username %> <a href="/logout"><button>Log Out</button></a></h4>
+          <h5>Welcome <%= current_user.username %> <a href="/logout"><button>Log Out</button></a></h5>
         <% end %>
         <small>&copy; 2021 <strong>Coffee Tasting Journal - Jasmine Ryon</strong></small>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
 

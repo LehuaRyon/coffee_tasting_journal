@@ -1,17 +1,13 @@
-<h1>Editting <%= @coffee.name %></h1>
+<h2>Editting <%= @coffee.name %></h2>
 
   <form action="/coffees/<%= @coffee.id %>" method="post">
     <input type="hidden" name="_method" value="patch"/>
 
-    <label for="name">Name:</label>
+    <p><label for="name">Name:</label>
     <input type="text" name="name" value="<%= @coffee.name %>"/>
-    <br>
-    <br>
 
     <label for="name">Roaster:</label>
     <input type="text" name="roaster" value="<%= @coffee.roaster %>"/>
-    <br>
-    <br>
 
     <label for="name">Producer:</label>
     <input type="text" name="producer" value="<%= @coffee.producer %>"/>
@@ -20,23 +16,17 @@
 
     <label for="name">Variety:</label>
     <input type="text" name="variety" value="<%= @coffee.variety %>"/>
-    <br>
-    <br>
 
     <label for="name">Process:</label>
     <input type="text" name="process" value="<%= @coffee.process %>"/>
-    <br>
-    <br>
 
     <label for="name">Notes:</label>
-    <textarea name="notes"><%= @coffee.notes %></textarea>
-    <br>
-    <br>
+    <textarea name="notes"><%= @coffee.notes %></textarea></p>
 
     <input type="submit" value="Submit Edited Coffee Log"/>
   </form>
-
-  <form action="/coffees/<%= @coffee.id %>" method="post">
+  
+  <p><form action="/coffees/<%= @coffee.id %>" method="post">
       <input type="hidden" name="_method" value="delete"/>
       <input type="submit" value="Delete Coffee Log"/>
-  </form>
+  </form></p>
