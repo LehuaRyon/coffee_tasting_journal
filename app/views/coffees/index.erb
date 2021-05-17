@@ -4,11 +4,9 @@
 <ol>
     <% @coffees.each do |c| %>
     <li>
-        <p><%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
-            <% if current_user == c.user %>
-                <a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>
-            <% end %>
-        </p>
+        <% if current_user == c.user %>
+                <p><a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>  <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></p>
+        <% end %>
     </li>    
     <% end %>
 </ol>

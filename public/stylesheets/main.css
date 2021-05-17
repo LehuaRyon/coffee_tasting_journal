@@ -87,12 +87,9 @@
       padding-right: 10px;
       padding-left: 10px;
     }
-  
-    
 
-    #new_button {
-        display: inline-block;
-        margin-left: 160px;
+    .aligncenter {
+        text-align: center;
     }
 
     .form {
@@ -117,6 +114,11 @@
 		text-align: left;
 		float: right;
 	}
+
+    #new_button {
+        display: inline-block;
+        margin-left: 160px;
+    }
   
     footer.branding {
         color: Snow;
