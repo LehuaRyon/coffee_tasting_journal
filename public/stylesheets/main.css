@@ -119,6 +119,11 @@
         display: inline-block;
         margin-left: 160px;
     }
+
+    #delete_button {
+        display: inline-block;
+        margin-left: 180px;
+    }
   
     footer.branding {
         color: Snow;

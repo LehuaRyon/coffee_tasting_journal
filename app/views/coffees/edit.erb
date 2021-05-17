@@ -1,6 +1,8 @@
 <h2>Editting <%= @coffee.name %></h2>
 
-  <form action="/coffees/<%= @coffee.id %>" method="post">
+<img style="float: right; margin: 0px 15px 15px 15px;" src="https://images.ctfassets.net/xez96kpzhlbh/554RHcofA4IWIUAmGIcIcE/3b902d714641f313822fedae8aed8ebc/kaffeeverkostung-coffee-tasters-flavor-wheel.jpg" width="840" />
+
+  <form action="/coffees/<%= @coffee.id %>" method="post" class="form">
     <input type="hidden" name="_method" value="patch"/>
 
     <p><label for="name">Name:</label>
@@ -11,8 +13,6 @@
 
     <label for="name">Producer:</label>
     <input type="text" name="producer" value="<%= @coffee.producer %>"/>
-    <br>
-    <br>
 
     <label for="name">Variety:</label>
     <input type="text" name="variety" value="<%= @coffee.variety %>"/>
@@ -21,12 +21,12 @@
     <input type="text" name="process" value="<%= @coffee.process %>"/>
 
     <label for="name">Notes:</label>
-    <textarea name="notes"><%= @coffee.notes %></textarea></p>
+    <textarea name="notes" rows="7" cols="19"></textarea></p>
 
     <input type="submit" value="Submit Edited Coffee Log"/>
   </form>
   
-  <p><form action="/coffees/<%= @coffee.id %>" method="post">
+  <p><form action="/coffees/<%= @coffee.id %>" method="post" id ="delete_button">
       <input type="hidden" name="_method" value="delete"/>
       <input type="submit" value="Delete Coffee Log"/>
   </form></p>
