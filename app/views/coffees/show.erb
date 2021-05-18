@@ -1,6 +1,21 @@
 <h2><%= @coffee.name %></h2>
 
-<img style="float: right; margin: 0px 15px 5px 5px;" src="https://cdn.shopify.com/s/files/1/0187/0338/files/Screen_Shot_2020-06-29_at_8.24.58_AM.png?v=1593437153" width="435" />
+<img style="float: right; margin: 0px 15px 5px 5px;" src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMzIxNjQ2My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY3Njk4Mjg3MX0.4D2MPJW7OJI2KyBWOKAI72HnvEi9IAN5Y01-r60YhB4/img.jpg?width=1200&coordinates=0%2C1066%2C0%2C1066&height=600" width="820" />
+
+<div class="show_button">
+    <div>
+        <p><a href="/coffees"><button >See All Coffee Logs</button></a></p>
+        <br>
+        <p><a href="/coffees/<%= @coffee.id %>/edit"><button>Edit This Coffee Log</button></a></p>
+        <br>
+        <form action="/coffees/<%= @coffee.id %>" method="post">
+            <p><input type="hidden" name="_method" value="delete"/>
+            <input type="submit" value="Delete This Coffee Log"/></p>
+        </form>
+        <br>
+        <p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
+    </div>
+</div>
 
 <h4>Roaster:</h4>
 <p><%= @coffee.roaster %></p>
@@ -17,12 +32,3 @@
 <h4>Notes:</h4>
 <p><%= @coffee.notes %></p>
 
-<p><a href="/coffees"><button>See All Coffee Logs</button></a></p>
-<p><a href="/coffees/<%= @coffee.id %>/edit"><button>Edit This Coffee Log</button></a></p>
-
-<form action="/coffees/<%= @coffee.id %>" method="post">
-    <p><input type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete This Coffee Log"/></p>
-</form>
-
-<p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
