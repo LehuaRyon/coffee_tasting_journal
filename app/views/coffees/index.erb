@@ -6,9 +6,11 @@
 <ol>
     <% @coffees.each do |c| %>
     <li>
-        <% if current_user == c.user %>
-                <p><a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>  <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></p>
-        <% end %>
+        <p><%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
+            <% if current_user == c.user %>
+                <a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>
+            <% end %>
+        </p>
     </li>    
     <% end %>
 </ol>
