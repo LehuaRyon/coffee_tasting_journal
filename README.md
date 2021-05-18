@@ -1,7 +1,7 @@
 # Coffee Tasting Journal - An app to keep track of the coffees you have tasted and the information about them
 
 ## Description
-This app was built for the [Flatiron School](https://flatironschool.com/) Sinatra project and is meant to let users log their coffee tasting adventures.  Users can log information about their favorite roasts or coffees they've tried, such as the coffee name, producer, roaster, etc. Users can also describe what the tasting notes are in the coffee as well as another other thoughts they have on particular coffee in the notes section, such as a rating, brew date, or preference. Users can create as many coffee logs as they would like for future reference.
+This app was built for the [Flatiron School](https://flatironschool.com/) Sinatra project and is meant to let users log their coffee tasting adventures.  Users can log information about their favorite roasts or coffees they've tried, such as the coffee name, producer, roaster, etc. Users can also describe what the tasting notes are in the coffee as well as any other thoughts they have on particular coffee in the notes section, such as a rating, brew date, or preference. Users can create as many coffee logs as they would like for future reference.
 
 ## Installation
 Clone this repository and execute: 
