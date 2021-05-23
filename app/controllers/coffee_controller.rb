@@ -22,10 +22,10 @@ class CoffeeController < ApplicationController
     end
 
     post '/coffees' do
-        @coffee = Coffee.new(params)
-        @coffee.user_id = current_user.id
-        if @coffee.save
-            redirect "/coffees/#{@coffee.id}"
+        coffee = Coffee.new(params)
+        coffee.user_id = current_user.id
+        if coffee.save
+            redirect "/coffees/#{coffee.id}"
         else
             flash[:coffee_attributes_not_all_filled_out] = "Please fill out every field.  Insert 'N/A' for the fields you do not have information for."
             redirect '/coffees/new'
