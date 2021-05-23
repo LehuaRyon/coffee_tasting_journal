@@ -8,20 +8,20 @@
     <p><label for="name">Name:</label>
     <input type="text" name="name" value="<%= @coffee.name %>"/>
 
-    <label for="name">Roaster:</label>
+    <label for="roaster">Roaster:</label>
     <input type="text" name="roaster" value="<%= @coffee.roaster %>"/>
 
-    <label for="name">Producer:</label>
+    <label for="producer">Producer:</label>
     <input type="text" name="producer" value="<%= @coffee.producer %>"/>
 
-    <label for="name">Variety:</label>
+    <label for="variety">Variety:</label>
     <input type="text" name="variety" value="<%= @coffee.variety %>"/>
 
-    <label for="name">Process:</label>
+    <label for="process">Process:</label>
     <input type="text" name="process" value="<%= @coffee.process %>"/>
 
-    <label for="name">Notes:</label>
-    <textarea name="notes" rows="7" cols="19"></textarea></p>
+    <label for="notes">Notes:</label>
+    <textarea name="notes" rows="7" cols="19"><%= @coffee.notes %></textarea></p>
 
     <input type="submit" value="Submit Edited Coffee Log"/>
   </form>
