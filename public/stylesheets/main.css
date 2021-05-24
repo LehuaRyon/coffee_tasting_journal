@@ -181,6 +181,7 @@
         border: 2px solid #704241;
         color: Snow;
         font-size: 18px;
+        border-radius: 12px;
     }
 
     .button:hover {
