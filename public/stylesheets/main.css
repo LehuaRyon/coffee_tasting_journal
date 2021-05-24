@@ -83,10 +83,13 @@
 
     h4 {
         font-family: Monaco;
-        text-shadow: none;
+        text-shadow: 2px 2px 5px Snow;
         text-decoration: underline;
         padding-right: 10px;
         padding-left: 10px;
+        color: #704241;
+        text-decoration: underline;
+        text-underline-offset: 0.3em;
     }
 
     h5 {

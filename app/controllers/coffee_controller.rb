@@ -42,8 +42,12 @@ class CoffeeController < ApplicationController
     patch '/coffees/:id' do
         get_coffee
         redirect_if_not_authorized
-        @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
-        redirect "/coffees/#{@coffee.id}"
+        if @coffee.update(name: params[:name], roaster: params[:roaster], producer: params[:producer], variety: params[:variety], process: params[:process], notes: params[:notes])
+            redirect "/coffees/#{@coffee.id}"
+        else
+            flash[:coffee_attributes_not_all_filled_out] = "Please fill out every field.  Insert 'N/A' for the fields you do not have information for."
+            redirect "/coffees/#{@coffee.id}/edit"
+        end
     end
 
     delete '/coffees/:id' do
