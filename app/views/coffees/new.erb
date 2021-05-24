@@ -1,7 +1,7 @@
 <h2>Create a New Coffee Log</h2>
 
-<img style="float: right; margin: 0px 15px 15px 15px;" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_solutions_chart.jpg?v=1593186857" width="390" />
-<img style="float: right; margin: 0px 0px 15px 15px;" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_symptoms_chart.jpg?v=1593186777" width="390" />
+<img id="new_image_1" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_solutions_chart.jpg?v=1593186857" />
+<img id="new_image_2" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_symptoms_chart.jpg?v=1593186777" />
 
 <form action="/coffees" method="post" class="form">
     <p><label for="name">Name:</label>
@@ -20,10 +20,10 @@
     <input type="text" name="process"/>
 
     <label for="notes">Notes:</label>
-    <textarea name="notes" rows="6" cols="19"></textarea></p>
+    <textarea name="notes" rows="8" cols="24"></textarea></p>
     
-    <p><input type="submit" value="Submit New Coffee Log"/></p>
+    <p><input class="button" type="submit" value="Submit New Coffee Log"/></p>
 </form>
+
     
-    <p><a href="/coffees"><button id ="new_button">See All Coffee Logs</button></a></p>
 

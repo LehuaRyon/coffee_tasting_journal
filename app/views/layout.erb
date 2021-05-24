@@ -11,6 +11,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="topnav">
+    <% if logged_in? %>
+      <a class="disabled">Welcome <%= current_user.username %></a>
+      <a href="/logout">Log Out</a> 
+      <a href="/">Home</a> 
+      <a href="/coffees">Coffee Logs</a> 
+      <a href="/coffees/new">New Coffee Log</a>
+    <% else %>
+      <a href="/">Home</a> 
+      <a href="/login">Login</a> 
+      <a href="/signup">Sign Up</a>
+    <% end %>
+  </div>
     <h1>Coffee Tasting Journal</h1>
       <% flash.keys.each do |type| %>
         <div data-alert class="flash <%= type %> alert-box radius">
@@ -20,9 +33,6 @@
       <% end %>
     <%= yield %>
     <footer class="class= branding fixed-bottom">
-        <% if logged_in? %>
-          <h5>Welcome <%= current_user.username %> <a href="/logout"><button>Log Out</button></a></h5>
-        <% end %>
         <small>&copy; 2021 <strong>Coffee Tasting Journal - Jasmine Ryon</strong></small>
     </footer>
   </body>

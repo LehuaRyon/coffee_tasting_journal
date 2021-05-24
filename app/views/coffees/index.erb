@@ -1,18 +1,14 @@
 <h2>Coffees</h2>
 
-<img style="float: right; margin: 0px 15px 15px 15px;" src="https://cdn.shopify.com/s/files/1/0187/0338/files/Screen_Shot_2020-06-29_at_8.24.58_AM.png?v=1593437153" width="465" />
+<img id="index_image" src="https://cdn.shopify.com/s/files/1/0187/0338/files/Screen_Shot_2020-06-29_at_8.24.58_AM.png?v=1593437153" />
 
-<p><a href="/coffees/new"><button>Create New Coffee Log</button></a></p>
 <ol>
     <% @coffees.each do |c| %>
     <li>
-        <p><%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>
-            <% if current_user == c.user %>
-                <a href="/coffees/<%= c.id %>/edit"><button>Edit</button></a>
-            <% end %>
-        </p>
+        <% if current_user == c.user %>
+                <p><a href="/coffees/<%= c.id %>/edit"><button class="button">Edit</button></a>  <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></p>
+        <% end %>
     </li>    
     <% end %>
-    <br>
     <br>
 </ol>
