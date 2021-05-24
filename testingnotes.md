@@ -5,6 +5,7 @@ patch '/coffees/:id' do
         redirect "/coffees/#{@coffee.id}"
 end
 
+in show:
 <div class="show_buttons">
     <div>
         <p><a href="/coffees/<%= @coffee.id %>/edit"><button class="button">Edit This Coffee Log</button></a></p>
@@ -14,3 +15,4 @@ end
         </form>
     </div>
 </div>
+

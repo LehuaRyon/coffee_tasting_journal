@@ -119,19 +119,19 @@
     }
 
     #index_image {
-        width: 465px;
+        width: 430px;
         margin: 0px 15px 15px 15px;
         float: right;
     }
 
     #new_image_1 {
-        width: 385px;
+        width: 365px;
         margin: 0px 15px 15px 15px;
         float: right; 
     }
 
     #new_image_2 {
-        width: 385px;
+        width: 365px;
         margin: 0px 15px 15px 15px;
         float: right; 
     }
@@ -143,7 +143,7 @@
     }
 
     #edit_image {
-        width: 820px;
+        width: 750px;
         margin: 0px 15px 15px 15px;  
         float: right;
     }
