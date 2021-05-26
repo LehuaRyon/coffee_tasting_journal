@@ -16,30 +16,20 @@ in show:
     </div>
 </div>
 
-in show:
-<h2><%= @coffee.name %></h2>
+<div class="index">
+    <img class="img-fluid" src="https://cdn.shopify.com/s/files/1/0187/0338/files/Screen_Shot_2020-06-29_at_8.24.58_AM.png?v=1593437153" />
+    <div class="index__text">
+        <h2 style="margin-left: 300px;">Coffees</h2>
+            <ol>
+                <% @coffees.each do |c| %>
+                <li>
+                    <% if current_user == c.user %>
+                            <p><a href="/coffees/<%= c.id %>/edit"><button class="button">Edit</button></a>  <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></p>
+                    <% end %>
+                </li>    
+                <% end %>
+                <br>
+            </ol>
+    </div>
+</div>
 
-<img id="show_image" src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMzIxNjQ2My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY3Njk4Mjg3MX0.4D2MPJW7OJI2KyBWOKAI72HnvEi9IAN5Y01-r60YhB4/img.jpg?width=1200&coordinates=0%2C1066%2C0%2C1066&height=600" />
-
-<h4>Roaster:</h4>
-<p><%= @coffee.roaster %></p>
-
-<h4>Producer:</h4>
-<p><%= @coffee.producer %></p>
-
-<h4>Variety:</h4>
-<p><%= @coffee.variety %></p>
-
-<h4>Process:</h4>
-<p><%= @coffee.process %></p>
-
-<h4>Notes:</h4>
-<p><%= @coffee.notes %></p>
-
-<p><a href="/coffees/<%= @coffee.id %>/edit"><button class="button">Edit This Coffee Log</button></a></p>
-
-<form action="/coffees/<%= @coffee.id %>" method="post">
-    <p><input type="hidden" name="_method" value="delete"/>
-    <input class="button" type="submit" value="Delete This Coffee Log"/></p>
-</form>
-<br>

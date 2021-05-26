@@ -25,6 +25,14 @@
         color: #704241;
     }
   
+    .signup {
+        padding: 10px 10px 60px 10px;
+        display: flex;
+        &__text {
+          flex: 1 1 auto;
+        }
+    }
+
     .home {
         text-align: center;
         font-family: Monaco;
@@ -60,14 +68,6 @@
         &__text {
           flex: 1 1 auto;
         }
-    }
-
-    .img-fluid {
-        margin: 20px 30px 0 0;
-        max-width: 100%;
-        height: auto
-        object-fit: contain;
-        align-self: flex-start;
     }
 
     body {
@@ -149,9 +149,18 @@
         border-style: inset;
     }
 
+    .img-fluid {
+        margin: 20px 30px 0 0;
+        max-width: 100%;
+        height: auto
+        object-fit: contain;
+        align-self: flex-start;
+    }
+
     #signup_image {    
-        width: 930px;  
-        margin: 0px 15px 15px 15px;  
+        width: 1000px;  
+        height: 300px;
+        margin: 15px 15px 15px 15px;  
         }
 
     .aligncenter {
@@ -166,11 +175,6 @@
     #new_image_2 {
         width: 400px;
         margin: 0px 15px 15px 15px;
-    }
-
-    #show_image {
-        width: 500px;
-        margin: 0px 15px 5px 5px;
     }
 
     #edit_image {
@@ -233,6 +237,10 @@
     #delete_button {
         font-family: Monaco;
         padding-left: 175px;
+    }
+
+    .flash {
+        margin-left: 20px;
     }
   
     footer.branding {
