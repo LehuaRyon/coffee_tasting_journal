@@ -46,6 +46,14 @@
         }
     }
 
+    .edit {
+        padding: 10px 10px 60px 10px;
+        display: flex;
+        &__text {
+          flex: 1 1 auto;
+        }
+    }
+
     .img-fluid {
         margin: 20px 30px 0 0;
         max-width: 100%;
@@ -159,9 +167,8 @@
     }
 
     #edit_image {
-        width: 750px;
+        width: 800px;
         margin: 0px 15px 15px 15px;  
-        float: right;
     }
 
     .form {

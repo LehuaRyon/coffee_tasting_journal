@@ -16,39 +16,30 @@ in show:
     </div>
 </div>
 
-in edit:
-<h2>Editting <%= @coffee.name %></h2>
+in show:
+<h2><%= @coffee.name %></h2>
 
-<img id="edit_image" src="https://images.ctfassets.net/xez96kpzhlbh/554RHcofA4IWIUAmGIcIcE/3b902d714641f313822fedae8aed8ebc/kaffeeverkostung-coffee-tasters-flavor-wheel.jpg" />
+<img id="show_image" src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMzIxNjQ2My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY3Njk4Mjg3MX0.4D2MPJW7OJI2KyBWOKAI72HnvEi9IAN5Y01-r60YhB4/img.jpg?width=1200&coordinates=0%2C1066%2C0%2C1066&height=600" />
 
-<form action="/coffees/<%= @coffee.id %>" method="post" id="delete_button">
-    <input type="hidden" name="_method" value="delete"/>
-    <input class="button" type="submit" value="Delete Coffee Log"/>
+<h4>Roaster:</h4>
+<p><%= @coffee.roaster %></p>
+
+<h4>Producer:</h4>
+<p><%= @coffee.producer %></p>
+
+<h4>Variety:</h4>
+<p><%= @coffee.variety %></p>
+
+<h4>Process:</h4>
+<p><%= @coffee.process %></p>
+
+<h4>Notes:</h4>
+<p><%= @coffee.notes %></p>
+
+<p><a href="/coffees/<%= @coffee.id %>/edit"><button class="button">Edit This Coffee Log</button></a></p>
+
+<form action="/coffees/<%= @coffee.id %>" method="post">
+    <p><input type="hidden" name="_method" value="delete"/>
+    <input class="button" type="submit" value="Delete This Coffee Log"/></p>
 </form>
-
-<form action="/coffees/<%= @coffee.id %>" method="post" class="form">
-  <input type="hidden" name="_method" value="patch"/>
-
-  <p><label for="name">Name:</label>
-  <input type="text" name="name" value="<%= @coffee.name %>"/>
-
-  <label for="roaster">Roaster:</label>
-  <input type="text" name="roaster" value="<%= @coffee.roaster %>"/>
-
-  <label for="producer">Producer:</label>
-  <input type="text" name="producer" value="<%= @coffee.producer %>"/>
-
-  <label for="variety">Variety:</label>
-  <input type="text" name="variety" value="<%= @coffee.variety %>"/>
-
-  <label for="process">Process:</label>
-  <input type="text" name="process" value="<%= @coffee.process %>"/>
-
-  <label for="notes">Notes:</label>
-  <textarea name="notes" rows="5" cols="24"><%= @coffee.notes %></textarea></p>
-
-  <input class="button" type="submit" value="Submit Edited Coffee Log"/>
-</form>
-  
-
- 
+<br>
