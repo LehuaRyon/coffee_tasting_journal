@@ -16,3 +16,18 @@ in show:
     </div>
 </div>
 
+in index:
+<h2>Coffees</h2>
+
+<img id="index_image" src="https://cdn.shopify.com/s/files/1/0187/0338/files/Screen_Shot_2020-06-29_at_8.24.58_AM.png?v=1593437153" />
+
+<ol>
+    <% @coffees.each do |c| %>
+    <li>
+        <% if current_user == c.user %>
+                <p><a href="/coffees/<%= c.id %>/edit"><button class="button">Edit</button></a>  <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %></p>
+        <% end %>
+    </li>    
+    <% end %>
+    <br>
+</ol>
