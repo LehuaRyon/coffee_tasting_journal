@@ -46,6 +46,14 @@
         }
     }
 
+    .show {
+        padding: 10px 10px 60px 10px;
+        display: flex;
+        &__text {
+          flex: 1 1 auto;
+        }
+    }
+
     .edit {
         padding: 10px 10px 60px 10px;
         display: flex;
@@ -161,9 +169,8 @@
     }
 
     #show_image {
-        width: 820px;
+        width: 500px;
         margin: 0px 15px 5px 5px;
-        float: right;
     }
 
     #edit_image {
