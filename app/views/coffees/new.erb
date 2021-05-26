@@ -1,29 +1,30 @@
-<h2>Create a New Coffee Log</h2>
+<div class="new">
+    <div class="new__text">
+        <h2>New Coffee Log</h2>
+            <form action="/coffees" method="post" class="form">
+                <p><label for="name">Name:</label>
+                <input type="text" name="name"/>
 
-<img id="new_image_1" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_solutions_chart.jpg?v=1593186857" />
-<img id="new_image_2" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_symptoms_chart.jpg?v=1593186777" />
+                <label for="roaster">Roaster:</label>
+                <input type="text" name="roaster"/>
 
-<form action="/coffees" method="post" class="form">
-    <p><label for="name">Name:</label>
-    <input type="text" name="name"/>
+                <label for="producer">Producer:</label>
+                <input type="text" name="producer"/>
 
-    <label for="roaster">Roaster:</label>
-    <input type="text" name="roaster"/>
+                <label for="variety">Variety:</label>
+                <input type="text" name="variety"/>
 
-    <label for="producer">Producer:</label>
-    <input type="text" name="producer"/>
+                <label for="process">Process:</label>
+                <input type="text" name="process"/>
 
-    <label for="variety">Variety:</label>
-    <input type="text" name="variety"/>
+                <label for="notes">Notes:</label>
+                <textarea name="notes" rows="7" cols="24"></textarea></p>
+                
+                <p><input class="button" type="submit" value="Submit New Coffee Log"/></p>
+            </form>
+    </div>
+    <img class="img-fluid" id="new_image_1" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_solutions_chart.jpg?v=1593186857" />
+    <img class="img-fluid" id="new_image_2" src="https://cdn.shopify.com/s/files/1/0187/0338/files/extraction_symptoms_chart.jpg?v=1593186777" />
+</div>
 
-    <label for="process">Process:</label>
-    <input type="text" name="process"/>
-
-    <label for="notes">Notes:</label>
-    <textarea name="notes" rows="7" cols="24"></textarea></p>
-    
-    <p><input class="button" type="submit" value="Submit New Coffee Log"/></p>
-</form>
-
-    
 
