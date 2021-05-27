@@ -11,7 +11,7 @@ class UserController < ApplicationController
             redirect '/signup'
         else 
             user.save
-            user.id = session[:user_id]
+            session[:user_id] = user.id
             redirect '/coffees'
         end
     end
