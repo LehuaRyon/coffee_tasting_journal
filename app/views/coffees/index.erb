@@ -8,10 +8,9 @@
                     <% if current_user == c.user %>
                         <a href="/coffees/<%= c.id %>/edit"><button class="button">Edit</button></a>
                     <% end %>
-                    <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>                      
+                    <%= c.roaster %> - <%= c.name %> - <%= c.producer %> - <%= c.variety %> - <%= c.process %> - <%= c.notes %>                    
                 </li>    
                 <% end %>
-                <br>
             </ol>
     </div>
 </div>
