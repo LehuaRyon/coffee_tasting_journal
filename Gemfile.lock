@@ -19,12 +19,14 @@ GEM
     concurrent-ruby (1.1.9)
     daemons (1.4.0)
     eventmachine (1.2.7)
+    foreman (0.87.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     minitest (5.14.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    pg (0.21.0)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -72,13 +74,13 @@ GEM
       thread_safe (~> 0.1)
 
 PLATFORMS
-  ruby
   x86_64-darwin-20
-  x86_64-linux
 
 DEPENDENCIES
   activerecord (~> 5.2)
   bcrypt
+  foreman
+  pg (~> 0.20)
   pry
   rake
   require_all
